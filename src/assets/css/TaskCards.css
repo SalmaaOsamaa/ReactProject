@@ -1,0 +1,26 @@
+.taskCard{
+    width: 18rem;
+    overflow: hidden;
+   text-align: center;
+   transform: scale(1);
+   transition: transform 0.5s ease;
+
+    
+   
+}
+
+.taskCard:hover{
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253);
+    transform: scale(1.1);
+}
+.cardBody{
+    padding: 3rem 0;
+}
+h2{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 39px;
+    margin-top: 1.5rem ;
+    margin-bottom: 1rem;
+    padding-left: 8rem;
+}

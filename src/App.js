@@ -1,24 +1,55 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HeaderCard from './Components/HeaderCard';
+import Welcome from './Components/Welcome';
+import TaskCards from './Components/TaskCards';
+import GetStarted from './Components/GetStarted';
+import UserFormLogin from './Components/UserFormLogin';
+import './assets/css/UserForm.css';
+
+
+
+
+
+
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path="/">
+          <Header />
+          <TaskCards />
+          <GetStarted />
+
+        </Route>
+        <div className='container signupContainer  mt-3'>
+
+          <div className='row '>
+            <div className='col-md-5'>
+              <UserFormLogin />
+
+            </div>
+          </div>
+        </div>
+
+
+        <div>
+          <Switch>
+            <Route path="/Welcome">
+              <Welcome />
+            </Route>
+          </Switch>
+        </div>
+
+
+      </div>
+    </Router>
   );
 }
 
