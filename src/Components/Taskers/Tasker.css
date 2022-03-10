@@ -1,0 +1,53 @@
+.img-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tasker-butt {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+}
+img {
+    width: 100%;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+.hint {
+    font-size: 12px;
+    margin: 30px 0px;
+    text-align: center;
+    color: rgba(128, 128, 128, 0.603);
+}
+.detail i {
+    margin-right: 10px;
+    color: gray;
+}
+.star {
+    color: rgb(255, 187, 0) !important;
+}
+.datails-font {
+    margin-top: 1px;
+}
+.tasker {
+    border: 0.5px solid rgba(0, 0, 0, 0.192);
+    padding: 10px;
+    border-radius: 10px;
+}
+.spinner-Con {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.spinner {
+    text-align: center;
+    font-size: 60px;
+    margin-left: 400px;
+    color: #24a0ed;
+}

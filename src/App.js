@@ -9,6 +9,8 @@ import GetStarted from './Components/GetStarted';
 import UserFormLogin from './Components/UserFormLogin';
 import './assets/css/UserForm.css';
 import Footer from './Components/Footer/Footer.jsx'
+import './Components/Conditions/Conditions.jsx'
+import './Components/Taskers/Taskers.jsx'
 
 
 
@@ -52,6 +54,12 @@ function App() {
       </div>
       <Footer/>
     </Router>
+              // <div className="container">
+              // <div className="row">
+              //   <div className="col-md-4"><Conditions/></div>
+              //   <div className="col-md-8"><Taskers/></div>
+              //   </div>
+              // </div>
   );
 }
 
