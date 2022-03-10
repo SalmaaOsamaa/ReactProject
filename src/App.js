@@ -8,6 +8,7 @@ import TaskCards from './Components/TaskCards';
 import GetStarted from './Components/GetStarted';
 import UserFormLogin from './Components/UserFormLogin';
 import './assets/css/UserForm.css';
+import Footer from './Components/Footer/Footer.jsx'
 
 
 
@@ -49,6 +50,7 @@ function App() {
 
 
       </div>
+      <Footer/>
     </Router>
   );
 }
