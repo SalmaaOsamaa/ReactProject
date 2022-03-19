@@ -1,55 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './Components/Header';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HeaderCard from './Components/HeaderCard';
-import Welcome from './Components/Welcome';
-import TaskCards from './Components/TaskCards';
-import GetStarted from './Components/GetStarted';
-import UserFormLogin from './Components/UserFormLogin';
-import './assets/css/UserForm.css';
-
-
-
-
-
-
-
-
+import React from "react";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import HomeTasks from './components/HomeTasks';
+import TaskDetails from "./components/TaskDetails";
+import NotFound from './components/NotFound';
+import Services from "./components/Services";
 
 function App() {
-
   return (
-    <Router>
-      <div className="App">
-        <Route exact path="/">
-          <Header />
-          <TaskCards />
-          <GetStarted />
-
-        </Route>
-        <div className='container signupContainer  mt-3'>
-
-          <div className='row '>
-            <div className='col-md-5'>
-              <UserFormLogin />
-
-            </div>
-          </div>
-        </div>
-
-
-        <div>
-          <Switch>
-            <Route path="/Welcome">
-              <Welcome />
-            </Route>
-          </Switch>
-        </div>
-
-
-      </div>
-    </Router>
+    <>
+    <BrowserRouter>
+    <Switch>
+      <Route path="/" exact component={HomeTasks}/>
+      <Route path="/taskDetails" exact component={TaskDetails}/>
+      <Route path="/services" exact component={Services}/>
+      <Route path={"*"} exact component={NotFound}/>
+    </Switch>
+    </BrowserRouter>
+    </>
   );
 }
 
