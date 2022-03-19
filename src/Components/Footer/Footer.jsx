@@ -1,7 +1,5 @@
 import React from 'react'
 import './Footer.css'
-import googleImg from './google_play_badge-49e6ea4ba78ca19b1246873b3369891cb6e289515c11418f1fce4cb3a694c18a.svg'
-import appleImg from './appstore_badge-86c9954e1457d27db013c1f10a96ffaba845e5af7765c4ef9df4ac1549e47d67.svg'
 
 function Footer() {
   return (
@@ -37,13 +35,7 @@ function Footer() {
                     <li><a className='link' href="/">Do Not Sell My Personal Information</a></li>
                 </ul>
                 </div>
-            <div className="col-md-4">
-                
-            <h3>Download our app</h3>
-            <p className="app">Tackle your to-do list wherever you are with our mobile app.</p> 
-                <img src={googleImg} alt="google" />
-                <img src={appleImg} alt="apple" />
-                </div>
+           
             </div>
             </div>
         </div>

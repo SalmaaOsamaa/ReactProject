@@ -5,13 +5,13 @@
     align-items: center;
 }
 .tasker-butt {
-    width: 100%;
+    width: 50%;
     height: 50px;
     border-radius: 10px;
 }
-img {
-    width: 100%;
-    border-radius: 50%;
+.taskerimg {
+    width: 50%;
+    border-radius:30px;
     margin: 10px auto;
 }
 .hint {
