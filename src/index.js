@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
 import Header from './Components/Header'
 import TaskCards from './Components/TaskCards'
 import GetStarted from './Components/GetStarted'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
+=======
+import 'bootstrap/dist/css/bootstrap.css';
+>>>>>>> master
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,13 +20,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-export {
-  Header,
-  TaskCards,
-  GetStarted,
-  
-
-}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -11,17 +11,12 @@ import './assets/css/UserForm.css';
 import Footer from './Components/Footer/Footer.jsx'
 import './Components/Conditions/Conditions.jsx'
 import './Components/Taskers/Taskers.jsx'
-
-
-
-
-
-
-
-
-
+import React from 'react'
+import TaskerProfile from './tasker-profile'
+import Tasker from './tasker'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import TaskerSlider from './tasker-slider'
 function App() {
-
   return (
     <Router>
       <div className="App">
@@ -29,17 +24,10 @@ function App() {
           <Header />
           <TaskCards />
           <GetStarted />
+          <Tasker />
 
         </Route>
-        <div className='container signupContainer  mt-3'>
-
-          <div className='row '>
-            <div className='col-md-5'>
-              <UserFormLogin />
-
-            </div>
-          </div>
-        </div>
+        
 
 
         <div>
@@ -61,6 +49,7 @@ function App() {
               //   </div>
               // </div>
   );
+
 }
 
-export default App;
+export default App
