@@ -1,12 +1,12 @@
 import {React} from "react";
-import headerImg from "../tools.jpg";
+import headerImg from "../img/tools.jpg";
 import ServicesCard from "./ServicesCard";
-import service1Img from "../mounting.jpg";
-import service2Img from "../furnitureassembly.jpg";
-import service3Img from "../moving.jpg";
-import service4Img from "../cleaning.jpg";
-import service5Img from "../delivery.jpg";
-import service6Img from "../handyman.jpg";
+import service1Img from "../img/mounting.jpg";
+import service2Img from "../img/furnitureassembly.jpg";
+import service3Img from "../img/moving.jpg";
+import service4Img from "../img/cleaning.jpg";
+import service5Img from "../img/delivery.jpg";
+import service6Img from "../img/handyman.jpg";
 
 
 export default function Services(){
