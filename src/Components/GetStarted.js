@@ -1,8 +1,10 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import '../assets/css/GetStarted.css';
- import img1 from '../images/client-sign-up-img.png';
- import img2 from '../images/become-a-tasker-img.png';
+import img1 from '../images/client-sign-up-img.png';
+import img2 from '../images/become-a-tasker-img.png';
+import img1 from '../assets/images/client-sign-up-img.png';
+import img2 from '../assets/images/become-a-tasker-img.png';
 
 const GetStarted = () => {
     return (

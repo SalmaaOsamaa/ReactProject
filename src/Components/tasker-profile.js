@@ -1,6 +1,6 @@
- import taskerpp from './img/taskerPP.jpg'
- import unknown from './img/Unknown_person.jpg'
- import star from './img/star.png'
+import taskerpp from '../assets/images/taskerPP.jpg'
+import unknown from '../assets/images/Unknown_person.jpg'
+import star from '../assets/images/star.png'
 import React from "react"
 const n = 5
 function TaskerProfile(props) {
