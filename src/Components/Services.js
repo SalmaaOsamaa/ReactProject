@@ -13,8 +13,8 @@ export default function Services(){
     return <>
     <div>
         <h1 className="text-center title">What do you need help with?</h1>
-        <img src={headerImg} alt=" " style={{width:"100%"}}/>
-        <h2 className="text-center mt-5 mb-3">Let Taskers help tackle your to-do list!</h2>
+        <img src={headerImg} alt=" " style={{width:"100%", height:"50vh"}}/>
+        <h2 className="text-center mt-4 mb-3">Let Taskers help tackle your to-do list!</h2>
         <div className="container">
         <div className="d-flex justify-content-around row row-cols-3">
             <ServicesCard ID="1" Title="Mounting & Installation" serviceImg={service1Img} Description="Wall Mounting" Service1="TV Mounting" Service2="Shelf Mounting" Service3="Hanging Curtains & Installing Blinds"/>
