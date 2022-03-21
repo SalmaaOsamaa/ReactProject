@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import taskerpp from '../img/taskerPP.jpg'
+import taskerpp from '../assets/images/taskerPP.jpg'
 
 function TaskerSlider() {
   const [sliderRef, setSliderRef] = useState(null)
