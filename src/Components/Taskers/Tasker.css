@@ -1,19 +1,19 @@
-.img-con {
+ .img-con {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} 
 .tasker-butt {
     width: 50%;
     height: 50px;
     border-radius: 10px;
 }
-.taskerimg {
+ .taskerimg {
     width: 50%;
     border-radius:30px;
     margin: 10px auto;
-}
+} 
 .hint {
     font-size: 12px;
     margin: 30px 0px;

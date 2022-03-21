@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../img/Logo1.jpeg'
+
 import Tasks from './Tasks'
 import StepNavigation from './StepNavigation'
 
@@ -47,7 +47,7 @@ export default function TaskDetails() {
         <div className="taskDetailsHeader bg-white px-5">
           <div className="d-flex justify-content-start mx-5">
             <Link to="/" className="logo mx-5 my-4">
-              <img src={logo} alt="Logo"></img>
+               <img src={logo} alt="Logo"></img> 
             </Link>
             <div className="m-5">
               <StepNavigation

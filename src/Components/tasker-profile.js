@@ -1,6 +1,6 @@
-import taskerpp from './img/taskerPP.jpg'
-import unknown from './img/Unknown_person.jpg'
-import star from './img/star.png'
+ import taskerpp from './img/taskerPP.jpg'
+ import unknown from './img/Unknown_person.jpg'
+ import star from './img/star.png'
 import React from "react"
 const n = 5
 function TaskerProfile(props) {
@@ -10,12 +10,12 @@ function TaskerProfile(props) {
         <div className="container-sm p-4 border rounded">
           <div className="row gx-4 border-bottom" padding={20}>
             <div className="col-auto">
-              <img
+               <img
                 src={taskerpp}
                 className="rounded-circle z-depth-2"
                 width={120}
                 height={120}
-              />
+              /> 
             </div>
             <div className="col-4">
               <h3>John B.</h3>
@@ -38,36 +38,36 @@ function TaskerProfile(props) {
           <h4>Reviews</h4>
           <div className="row">
             <div className="col">
-              <img
+               <img
                 src={unknown}
                 className="rounded-circle z-depth-2"
                 width={50}
                 height={50}
-              />
+              /> 
             </div>
             <div className="col-11">
               James B. <br />
-              {[...Array(n)].map((el, i) => (
+               {[...Array(n)].map((el, i) => (
                 <img src={star} width={20} height={20} />
-              ))}
+              ))} 
             </div>
             <div>“excellent. thank you !”</div>
             <div className='blockquote-footer'>March 3, 2022</div>
           </div>
           <div className="row">
             <div className="col">
-              <img
+               <img
                 src={unknown}
                 className="rounded-circle z-depth-2"
                 width={50}
                 height={50}
-              />
+              /> 
             </div>
             <div className="col-11">
               Julia S. <br />
-              {[...Array(n)].map((el, i) => (
+               {[...Array(n)].map((el, i) => (
                 <img src={star} width={20} height={20} />
-              ))}
+              ))} 
             </div>
             <div>“good service. thank you !”</div>
             <div className='blockquote-footer'>February 1, 2022</div>

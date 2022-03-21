@@ -1,4 +1,5 @@
 import './App.css'
+import NavBar from './Components/Navbar/index';
 import Header from './Components/Header'
 import HeaderCard from './Components/HeaderCard'
 import TaskCards from './Components/TaskCards'
@@ -7,7 +8,7 @@ import Footer from './Components/Footer/Footer.jsx'
 import './Components/Conditions/Conditions.jsx'
 import Taskers from './Components/Taskers/Taskers.jsx'
 import React from 'react'
-import TaskerProfile from './tasker-profile'
+import TaskerProfile from './Components/tasker-profile';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import TaskDetails from './Components/TaskDetails'
 import NotFound from './Components/NotFound'
@@ -17,21 +18,27 @@ import Tasks from './Components/Tasks'
 function App() {
   return (
     <>
-      {/* <NavBar/> */}
+     
       <BrowserRouter>
+      <NavBar/>
         <Routes>
           <Route
             path="/"
             element={
               <>
+              
                 <Header />
                 <TaskCards />
                 <TaskerSlider />
                 <GetStarted />
+                
               </>
             }
           ></Route>
           <Route path="/Tasks" element={<Tasks />}></Route>
+          <Route path="/services" element={<Services />}></Route>
+          {/* <Route path="/Tasks" element={<Tasks />}></Route>
+          <Route path="/Tasks" element={<Tasks />}></Route> */}
           <Route path="/Taskers" element={<Taskers />}></Route>
         </Routes>
       </BrowserRouter>

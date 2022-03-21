@@ -1,4 +1,4 @@
-/* .footer {
+.footer {
     height: 450px;
     background-color: grey;
     margin-top: 30px;
@@ -10,20 +10,7 @@
     color: white;
     font-size: 22px;
 }
-/* p {
-    color: rgb(202, 201, 201);
-} */
-/* .icons {
-    color: rgb(202, 201, 201);
+ .footericons {
+    color:#ffff;
     font-size: 25px;
-}
-span {
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-} */ 
-
-/* li {
-    list-style: none;
-    color: rgb(202, 201, 201);
-} */
+} 

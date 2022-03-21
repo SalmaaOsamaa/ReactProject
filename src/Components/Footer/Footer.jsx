@@ -6,7 +6,7 @@ function Footer() {
     <>
     <div className="footer">
         <div className="container">
-    <p className='icons'>Follow us! We're friendly : <span><i class="fa-brands fa-facebook-square"></i></span> | <span><i class="fa-brands fa-twitter"></i></span> | <span><i class="fa-brands fa-instagram-square"></i></span></p> 
+    <p className='footericons'>Follow us! We're friendly : <span><i class="fa-brands fa-facebook-square"></i></span> | <span><i class="fa-brands fa-twitter"></i></span> | <span><i class="fa-brands fa-instagram-square"></i></span></p> 
     
     
     

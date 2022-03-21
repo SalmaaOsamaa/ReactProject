@@ -1,4 +1,4 @@
-.background-image{
+ .background-image{
     display: flex;
     background-repeat: no-repeat;
     background-position: center top ;
@@ -8,7 +8,7 @@
     background-image: url(/src/images/hhh.jpg);
     
    
-}
+} 
 .Header-text{
     background-color: white;
     width: 40%;

@@ -1,5 +1,5 @@
 import React from 'react'
-import img from './fpjgbjkbyrfkkowev608.jpg'
+ import img from './fpjgbjkbyrfkkowev608.jpg'
 import './Tasker.css'
 import taskersData from '../DataofTaskers/DataofTaskers.json';
 
@@ -9,7 +9,7 @@ return (
     <> 
     {taskersData ? taskersData.map((tasker , indx) => <div key={indx} className="tasker row my-3">
   <div className="img-con col-md-4">
-      <img className="taskerimg rounded-circle z-depth-2" src={img} alt="tasker" />
+       <img className="taskerimg rounded-circle z-depth-2" src={img} alt="tasker" /> 
       <p><a href="/" className='link'>View Profile & Reviews</a></p>
       <button className='butt tasker-butt'>Select & Continue</button>
       <p className='hint'>You can chat with your Tasker, adjust task details, or change task time after booking.</p>

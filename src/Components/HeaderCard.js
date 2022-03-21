@@ -60,7 +60,7 @@ const HeaderCard = () => {
         </div>
         <div className="row">
           <div className="col-9">
-            <div className="Task-search">
+            <div className="Task-search text-center">
               <Typeahead
                 id="header-Search"
                 className="Task-form"
