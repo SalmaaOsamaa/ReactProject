@@ -79,10 +79,7 @@ const TaskCards = ({ src, alt, title, content, width, height }) => {
 
                                         <p><FontAwesomeIcon icon={faMoneyBill1Wave} /> {el.price}</p>
                                     </Card.Text>
-                                    <Link to={{
-                                        pathname: "/Welcome",
-                                        state: { taskName: el.id }
-                                    }} variant="primary">Check availability</Link >
+                                    <Link to={ `taskDetails/${el.id}`} variant="primary">Check availability</Link >
 
                                 </Card.Body>
                             </Card>

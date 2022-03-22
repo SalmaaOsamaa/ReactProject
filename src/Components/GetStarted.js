@@ -1,10 +1,8 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import '../assets/css/GetStarted.css';
-import img1 from '../images/client-sign-up-img.png';
-import img2 from '../images/become-a-tasker-img.png';
-import img1 from '../assets/images/client-sign-up-img.png';
-import img2 from '../assets/images/become-a-tasker-img.png';
+// import img1 from '../images/client-sign-up-img.png';
+// import img2 from '../images/become-a-tasker-img.png';
 
 const GetStarted = () => {
     return (
@@ -15,7 +13,7 @@ const GetStarted = () => {
                 <div className="row">
                     <div class="col-sm-6 col-md-5 col-lg-6">
                         <Card style={{ width: '25rem' }}>
-                             <Card.Img variant="top" src={img1} />
+                             {/* <Card.Img variant="top" src={img1} /> */}
                             <Card.Body>
 
                                 <Card.Text>
@@ -26,7 +24,7 @@ const GetStarted = () => {
                         </Card>
                     </div>
                     <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0"><Card style={{ width: '25rem' }}>
-                         <Card.Img variant="top" src={img2} />
+                         {/* <Card.Img variant="top" src={img2} /> */}
                         <Card.Body>
 
                             <Card.Text>

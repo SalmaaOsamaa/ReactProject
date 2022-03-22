@@ -95,15 +95,14 @@ const HeaderCard = () => {
                 </Link>
               ) : (
                 <Link
-                  key={c.id}
-                  to={{
-                    pathname: '/Welcome',
-                    state: { taskName: c.id },
-                  }}
-                  className="btn btn-link"
-                >
-                  {c.title}
-                </Link>
+                key={c.id}
+                to={
+                  `taskDetails/${c.id}`
+                }
+                className="btn btn-link"
+              >
+                {c.title}
+              </Link>
               ),
             )}
           </div>

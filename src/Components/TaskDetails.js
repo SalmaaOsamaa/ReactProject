@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import logo from '../assets/images/Logo1.jpeg'
 import Tasks from './Tasks'
 import StepNavigation from './StepNavigation'
@@ -16,30 +16,27 @@ export default function TaskDetails() {
     setCurrentStep(step)
   }
 
-  const location = useLocation()
-  const data = location.state
-  var taskName = ''
-  switch (data.taskID) {
+  var id = useParams();
+  var taskName;
+  switch (parseInt(id.id)) {
     case 1:
-      taskName = 'Mounting'
-      break
+      taskName = 'Furniture Assembly';
+    break;
     case 2:
-      taskName = 'Furniture Assembly'
-      break
+      taskName = 'Mounting';
+    break;
     case 3:
-      taskName = 'Help Moving'
-      break
+      taskName = 'Home Repairs';
+    break;
     case 4:
-      taskName = 'Cleaning'
-      break
+      taskName = 'Help Moving';
+    break;
     case 5:
-      taskName = 'Delivery'
-      break
+      taskName = 'Delivery';
+    break;
     case 6:
-      taskName = 'Home Repairs'
-      break
-    default:
-      taskName = ''
+      taskName = 'Cleaning';
+    break;
   }
   return (
     <>

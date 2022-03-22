@@ -40,6 +40,7 @@ function App() {
           {/* <Route path="/Tasks" element={<Tasks />}></Route>
           <Route path="/Tasks" element={<Tasks />}></Route> */}
           <Route path="/Taskers" element={<Taskers />}></Route>
+          <Route path="/taskDetails/:id" element={<TaskDetails />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />
