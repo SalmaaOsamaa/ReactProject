@@ -18,28 +18,28 @@ function TaskerSlider() {
     {
        imageSrc: taskerpp,
       name: 'John B.',
-      description: 'Lorem ipsum dolor sit amet, consectur dolori',
+      description: 'i have been using Sahla for so long and i have served alot of clients it has been a life changer',
       pricingText: 'USD 50/hr',
       services: ['Cleaning'],
     },
     {
        imageSrc: taskerpp,
       name: 'Andrew K.',
-      description: 'Lorem ipsum dolor sit amet, consectur dolori',
+      description: 'i have been using Sahla for so long and i have served alot of clients it has been a life changer',
       pricingText: 'USD 40/hr',
       services: ['Shopping', 'Delivery'],
     },
     {
        imageSrc: taskerpp,
       name: 'Ronald J.',
-      description: 'Lorem ipsum dolor sit amet, consectur dolori',
+      description: 'i have been using Sahla for so long and i have served alot of clients it has been a life changer',
       pricingText: 'USD 15/hr',
       services: ['Pet sitting', 'Delivery'],
     },
     {
        imageSrc: taskerpp,
       name: 'Adriano M.',
-      description: 'Lorem ipsum dolor sit amet, consectur dolori',
+      description: 'i have been using Sahla for so long and i have served alot of clients it has been a life changer',
       pricingText: 'USD 60/hr',
       services: ['Help moving', 'Furniture assembly', 'Moving heavy furniture'],
     },
@@ -62,6 +62,7 @@ function TaskerSlider() {
               src={card.imageSrc}
               width="100"
               height="100"
+              className=''
             /> 
             <p>{card.description}</p>
             <ul>

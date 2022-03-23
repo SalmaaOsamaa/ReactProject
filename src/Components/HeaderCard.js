@@ -1,8 +1,33 @@
 import React from 'react'
-import '../assets/css/Header.css'
 import { Link } from 'react-router-dom'
 import { Typeahead } from 'react-bootstrap-typeahead'
 import { useState } from 'react'
+import styled from 'styled-components'
+const items = [
+  'Cleaning',
+  'Assembly',
+  'Delivery',
+  'Mounting',
+  'Painting',
+  'YardWork',
+  'Minor Repairs',
+]
+const HeaderText = styled.div`
+background-color: white;
+width: 40%;
+margin: auto;
+padding: 2.5rem;
+border-radius: 4px;
+`;
+const HeaderSearch = styled.div`
+text-align:center;
+
+`;
+const TasksTags = styled.div`
+margin: 0 auto;
+padding:10px;
+text-align: left;
+`;
 const HeaderCard = () => {
   const [tasks, setTasks] = useState([
     {
@@ -35,41 +60,31 @@ const HeaderCard = () => {
     setTasks(tasks.filter((r) => r.title != 'See More'))
     setVisible(tasks.length)
   }
-  const items = [
-    'Cleaning',
-    'Assembly',
-    'Delivery',
-    'Mounting',
-    'Painting',
-    'YardWork',
-    'Minor Repairs',
-  ]
   return (
     <>
-      <div className="container Header-text">
-        <div className="row">
+    <HeaderText>
+    <div className="row">
           <div className="col">
-            <h1 className="Tasker-Header">
+            <h1 className='text-center'>
               Help when you need it, at your fingertips
             </h1>
-            <p className="Tasker-body">
+            <p className='text-center'>
               Get help around the house from a trusted Tasker. From handyman
               work and furniture assembly to moving, yardwork, and more.
             </p>
           </div>
         </div>
-        <div className="row">
-          <div className="col-9">
-            <div className="Task-search text-center">
-              <Typeahead
+        <HeaderSearch>
+          <div className='row'>
+            <div className='col-9 '>
+            <Typeahead
                 id="header-Search"
-                className="Task-form"
                 placeholder="Find Your Task..."
                 options={items}
               />
+              
             </div>
-          </div>
-          <div className="col-3">
+            <div className='col-3'>
             <Link
               to={{
                 pathname: '/Tasks',
@@ -78,18 +93,18 @@ const HeaderCard = () => {
             >
               Get a Tasker
             </Link>
+            </div>
           </div>
-        </div>
-
-        <div className="row ">
+          <div className="row ">
           <div className="col ">
+            <TasksTags>
             {tasks.slice(0, visible).map((c) =>
               c.title == 'See More' ? (
                 <Link
                   key={c.id}
                   to=""
                   onClick={seeMoreHandler}
-                  className="btn btn-link"
+                  className="btn btn-primary"
                 >
                   {c.title}
                 </Link>
@@ -99,15 +114,17 @@ const HeaderCard = () => {
                 to={
                   `taskDetails/${c.id}`
                 }
-                className="btn btn-link"
+                className="btn btn-primary m-1"
               >
                 {c.title}
               </Link>
               ),
             )}
+            </TasksTags>
           </div>
         </div>
-      </div>
+        </HeaderSearch>
+    </HeaderText>
     </>
   )
 }

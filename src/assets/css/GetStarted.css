@@ -1,7 +1,9 @@
-.title2{
-    text-align: center;
-    margin-top: 15px;
-}
+
 .wide-container{
     background-color:#FFF5EE;
+    font-weight: bold;
+    margin: 30px 0;
+    padding: 30px;
+    
+    
 }

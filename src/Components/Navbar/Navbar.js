@@ -1,8 +1,9 @@
 import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Nav = styled.nav`
+export const Nav = styled(motion.nav)`
   background: #24a0ed;
   height: 80px;
   display: flex;

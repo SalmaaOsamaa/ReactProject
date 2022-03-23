@@ -15,6 +15,10 @@ import NotFound from './Components/NotFound'
 import Services from './Components/Services'
 import TaskerSlider from './Components/tasker-slider'
 import Tasks from './Components/Tasks'
+import LoginOrSignUp from './Components/LoginOrSignUp';
+import Login from './Components/Login';
+import UserSignup from './Components/SignUp';
+import Location from './Components/City';
 function App() {
   return (
     <>
@@ -27,7 +31,7 @@ function App() {
             element={
               <>
               
-                <Header />
+                <Header/>
                 <TaskCards />
                 <TaskerSlider />
                 <GetStarted />
@@ -37,10 +41,15 @@ function App() {
           ></Route>
           <Route path="/Tasks" element={<Tasks />}></Route>
           <Route path="/services" element={<Services />}></Route>
+          <Route path='/locations' element={<Location/>}></Route>
           {/* <Route path="/Tasks" element={<Tasks />}></Route>
           <Route path="/Tasks" element={<Tasks />}></Route> */}
           <Route path="/Taskers" element={<Taskers />}></Route>
           <Route path="/taskDetails/:id" element={<TaskDetails />}></Route>
+          <Route path='/loginorsignup' element={<LoginOrSignUp/>}></Route>
+          <Route path='/Login' element={<Login/>}></Route>
+          <Route path='/SignUp' element={<UserSignup/>}></Route>
+          <Route></Route>
         </Routes>
       </BrowserRouter>
       <Footer />

@@ -1,0 +1,16 @@
+.form-background{
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center top ;
+    background-size: cover;
+    height: 70vh;
+    background-image: url(/src/assets/images/login-signup.jpg);
+}
+.logo-chooser {
+    width: 200px;
+    height: 90px;
+}
+a {
+    text-decoration: none;
+    color: #24a0ed;
+}

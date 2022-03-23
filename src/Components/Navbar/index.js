@@ -7,23 +7,31 @@ import {
   NavBtn,
   NavBtnLink
 } from './Navbar';
+ import logo from '../Navbar/logo.jpg'
+
 
 const Navbar = () => {
   return (
     <>
-      <Nav>
+      <Nav initial={{opacity:0,
+      }}
+      animate={{opacity:1,
+      }}
+    
+  
+      >
         <NavLink to='/'>
           <h1>Sahla</h1>
         </NavLink>
         <Bars />
         <NavMenu>
-          <NavLink to='/Taskers' activeStyle>
+          <NavLink to='/locations' activeStyle>
             Locations
           </NavLink>
           <NavLink to='/services' activeStyle>
             Services
           </NavLink>
-          <NavLink to='/Tasks' activeStyle>
+          <NavLink to='/loginorsignup' activeStyle>
             Signup/Login
           </NavLink>
         </NavMenu>

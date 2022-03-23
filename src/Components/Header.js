@@ -1,15 +1,41 @@
 import React from 'react'
-// import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-
-
-import '../assets/css/Header.css';
+import styled from 'styled-components';
 import HeaderCard from './HeaderCard';
+import { motion } from 'framer-motion';
+
+const HeaderBackground = styled(motion.div)`
+display: flex;
+background-repeat: no-repeat;
+background-position: center top ;
+background-size: cover;
+margin-top: 10px;
+height: 70vh;
+margin-top:0;
+background-image: url("/hhh.jpg");
+`;
+
+
 const Header = () => {
 
     return (
-        <section className='background-image'>
-            <HeaderCard />
-        </section>
+        
+        <HeaderBackground initial="pageInitial"
+        animate="pageAnimate"
+        variants={{
+            pageInitial:{
+                opacity: 0,
+                translateX: -50
+            },
+            pageAnimate: {
+                opacity: 1,
+                translateX: 0,
+              },
+        }}
+        
+        >
+        <HeaderCard />
+   </HeaderBackground>
+        
 
 
     )

@@ -62,8 +62,8 @@ const TaskCards = ({ src, alt, title, content, width, height }) => {
     ]
     return (
         <>
-            <h2>Popular projects in your area</h2>
-            <div className='container Task-container w-100  d-flex justify-content-center flex-wrap '>
+            <h2 className='mt-2 text-center '>Popular projects in your area</h2>
+            <div className='container Task-container w-100 d-flex justify-content-center flex-wrap '>
 
                 {cardContent.map(el =>
 
