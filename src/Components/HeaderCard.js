@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const HeaderText = styled.div`
   background-color: white;
   border-radius: 4px;
+  width:750px;
 `
 const HeaderSearch = styled.div`
   text-align: center;
@@ -58,7 +59,7 @@ const HeaderCard = () => {
   }
   return (
     <>
-      <HeaderText className='container w-50 h-75 p-5 m-auto center'>
+      <HeaderText className='container   p-5 m-auto center'>
         <div className="row">
           <div className="col">
             <h1 className="text-center">

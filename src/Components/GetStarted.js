@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import '../assets/css/GetStarted.css';
-import img1 from '../assets/images/ay7aga.jpg';
-import img2 from '../assets/images/ay7aga.jpg';
+import img1 from '../assets/images/signup.png';
+import img2 from '../assets/images/becomeatasker.jpg';
 import { Link } from 'react-router-dom';
 
 const GetStarted = () => {
@@ -18,7 +18,7 @@ const GetStarted = () => {
                 <div className='col text-center mt-3'>
                     <img src={img2} width="600px"></img>
                     <p> Grow your own business while saving the day for busy neighbors.</p>
-                    <Link className='btn btn-primary' to='/loginorsignup' >Join Sahla</Link>
+                    <Link className='btn btn-primary' to='/BecomeATasker' >Join Sahla</Link>
 
                 </div>
             </div>
