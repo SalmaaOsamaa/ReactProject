@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import logo from '../assets/images/logo.jpg'
+import logo from '../assets/images/logo.jpeg'
 
 import TextField from './TextField';
 import axios from 'axios';

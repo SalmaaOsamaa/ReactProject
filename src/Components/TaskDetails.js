@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import logo from '../assets/images/logo.jpg'
+import logo from '../assets/images/Logo1.jpeg'
 import Tasks from './Tasks'
 import StepNavigation from './StepNavigation'
 

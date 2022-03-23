@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/images/logo.jpg'
+import logo from '../assets/images/Logo1.jpeg'
 import { Formik} from 'formik';
 import * as Yup from 'yup';
 import '../assets/css/Login.css'

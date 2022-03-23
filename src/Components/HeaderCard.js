@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom'
 import { Typeahead } from 'react-bootstrap-typeahead'
 import { useState } from 'react'
 import styled from 'styled-components'
+const HeaderText = styled.div`
+  background-color: white;
+  border-radius: 4px;
+`
+const HeaderSearch = styled.div`
+  text-align: center;
+`
+const TasksTags = styled.div`
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+`
 const items = [
   'Cleaning',
   'Assembly',
@@ -12,22 +24,6 @@ const items = [
   'YardWork',
   'Minor Repairs',
 ]
-const HeaderText = styled.div`
-background-color: white;
-width: 40%;
-margin: auto;
-padding: 2.5rem;
-border-radius: 4px;
-`;
-const HeaderSearch = styled.div`
-text-align:center;
-
-`;
-const TasksTags = styled.div`
-margin: 0 auto;
-padding:10px;
-text-align: left;
-`;
 const HeaderCard = () => {
   const [tasks, setTasks] = useState([
     {
@@ -62,71 +58,67 @@ const HeaderCard = () => {
   }
   return (
     <>
-    <HeaderText>
-    <div className="row">
+      <HeaderText className='container w-50 h-75 p-5 m-auto center'>
+        <div className="row">
           <div className="col">
-            <h1 className='text-center'>
+            <h1 className="text-center">
               Help when you need it, at your fingertips
             </h1>
-            <p className='text-center'>
+            <p className="text-center">
               Get help around the house from a trusted Tasker. From handyman
               work and furniture assembly to moving, yardwork, and more.
             </p>
           </div>
         </div>
         <HeaderSearch>
-          <div className='row'>
-            <div className='col-9 '>
-            <Typeahead
+          <div className="row">
+            <div className="col">
+              <Typeahead
                 id="header-Search"
                 placeholder="Find Your Task..."
                 options={items}
               />
-              
             </div>
-            <div className='col-3'>
-            <Link
-              to={{
-                pathname: '/Tasks',
-              }}
-              className="btn btn-primary "
-            >
-              Get a Tasker
-            </Link>
+            <div className="col-3">
+              <Link
+                to={{
+                  pathname: '/taskDetails',
+                }}
+                className="btn btn-primary "
+              >
+                Get a Tasker
+              </Link>
             </div>
           </div>
           <div className="row ">
-          <div className="col ">
-            <TasksTags>
-            {tasks.slice(0, visible).map((c) =>
-              c.title == 'See More' ? (
-                <Link
-                  key={c.id}
-                  to=""
-                  onClick={seeMoreHandler}
-                  className="btn btn-primary"
-                >
-                  {c.title}
-                </Link>
-              ) : (
-                <Link
-                key={c.id}
-                to={
-                  `taskDetails/${c.id}`
-                }
-                className="btn btn-primary m-1"
-              >
-                {c.title}
-              </Link>
-              ),
-            )}
-            </TasksTags>
+            <div className="col ">
+              <TasksTags>
+                {tasks.slice(0, visible).map((c) =>
+                  c.title == 'See More' ? (
+                    <Link
+                      key={c.id}
+                      to=""
+                      onClick={seeMoreHandler}
+                      className="btn btn-primary"
+                    >
+                      {c.title}
+                    </Link>
+                  ) : (
+                    <Link
+                      key={c.id}
+                      to={`taskDetails/${c.id}`}
+                      className="btn btn-primary m-1"
+                    >
+                      {c.title}
+                    </Link>
+                  ),
+                )}
+              </TasksTags>
+            </div>
           </div>
-        </div>
         </HeaderSearch>
-    </HeaderText>
+      </HeaderText>
     </>
   )
 }
-
 export default HeaderCard

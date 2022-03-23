@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import '../assets/css/GetStarted.css';
-import img1 from '../assets/images/signup.png';
-import img2 from '../assets/images/hahahahahaha.jpg';
+import img1 from '../assets/images/ay7aga.jpg';
+import img2 from '../assets/images/ay7aga.jpg';
 import { Link } from 'react-router-dom';
 
 const GetStarted = () => {
