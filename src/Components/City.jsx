@@ -6,20 +6,17 @@ const City = () => {
   return (
 
 
-    <div className='main-cont'>
+    <div className='main-cont mb-5 py-5'>
       <div className='search-cont'>
-        <h2 className='text-center m-2' >cities where we work-sahla</h2>
+        <h2 className='h1 text-center' >cities where we work-sahla</h2>
         <br />
         <div class="searchbox">
-          <input type="search" class="xx  border border-primary " placeholder="search by zip code" />
+          <input type="search" class="xx  border border-primary form-control" placeholder="Search by zip code" />
           <button class="btn bg-primary text-white  btn-outline-primary  " type="button" >search </button>
         </div>
       </div>
       <div className='city' >
-
         <div className="city-list" >
-
-
           <div className='list'>
             <img src={location} className="earth" alt="logo" />
             <br />
@@ -27,7 +24,7 @@ const City = () => {
               Sahla's Locations
             </p>
             <ul className='list-group location-ul  m-3 p-5'>
-              <li className='list-group-item fw-bold  border-0' >cairo</li>
+              <li className='list-group-item fw-bold  border-0 h3' >Cairo</li>
               <li className='list-group-item border-0 text-primary' >nasr city</li>
               <li className='list-group-item border-0 text-primary' >new cairo</li>
               <li className='list-group-item border-0 text-primary' >maadi</li>
@@ -37,7 +34,7 @@ const City = () => {
             </ul>
 
             <ul className='list-group  location-ul flex m-3 p-5'>
-              <li className='list-group-item fw-bold  border-0' >cairo</li>
+              <li className='list-group-item fw-bold  border-0 h3' >Cairo</li>
               <li className='list-group-item border-0 text-primary' >nasr city</li>
               <li className='list-group-item border-0 text-primary' >new cairo</li>
               <li className='list-group-item border-0 text-primary' >maadi</li>
@@ -46,25 +43,14 @@ const City = () => {
 
             </ul>
             <ul className='list-group location-ul flex m-3 p-5'>
-              <li className='list-group-item fw-bold  border-0' >cairo</li>
+              <li className='list-group-item fw-bold  border-0 h3' >Cairo</li>
               <li className='list-group-item border-0 text-primary' >nasr city</li>
               <li className='list-group-item border-0 text-primary' >new cairo</li>
               <li className='list-group-item border-0 text-primary' >maadi</li>
               <li className='list-group-item border-0 text-primary' >zayton</li>
-
-
             </ul>
-
-
-
-
-
           </div>
-
         </div>
-
-
-
       </div>
     </div>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/images/Logo1.jpeg'
+import logo from '../assets/images/logo.jpeg'
 import { Formik} from 'formik';
 import * as Yup from 'yup';
 import '../assets/css/Login.css'
@@ -36,8 +36,8 @@ function Login() {
     }}
     >
       {formik=>(
-        <div className='home'>
-        <div className="form-Con h-50">
+        <div className='home form-background'>
+        <div className="form-Con">
     <img className='logo-chooser' src={logo} alt="logo"/>
       <form className='w-50 d-flex flex-column justify-content-evenly align-item-center' onSubmit={formik.handleSubmit}>
         <TextField label="Email" name="email" type="email" />

@@ -28,10 +28,10 @@ function Footer() {
                     <li><a className='link' href="/">About Us</a></li>
                     <li><a className='link' href="/">Careers</a></li>
                     <li><a className='link' href="/">Press</a></li>
-                    <li><a className='link' href="/">TaskRabbit for Good</a></li>
+                    <li><a className='link' href="/">SAHLA for Good</a></li>
                     <li><a className='link' href="/">Blog</a></li>
                     <li><a className='link' href="/">Terms & Privacy</a></li>
-                    <li><a className='link' href="/"> California Consumer Notice</a></li>
+                    <li><a className='link' href="/">Consumer Notice</a></li>
                     <li><a className='link' href="/">Do Not Sell My Personal Information</a></li>
                 </ul>
                 </div>

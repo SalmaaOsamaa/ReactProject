@@ -12,11 +12,11 @@ export default function Services() {
   return (
     <>
       <div>
-        <h1 className="text-center title">What do you need help with?</h1>
+        <h1 className="text-center mt-5 title">What do you need help with?</h1>
         <img
           src={headerImg}
           alt=" "
-          style={{ width: '100%', height: '50vh' }}
+          style={{ width: '100%', height: '75vh'  }}
         />
         <h2 className="text-center mt-4 mb-3">
           Let Taskers help tackle your to-do list!
