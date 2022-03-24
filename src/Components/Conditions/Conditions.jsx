@@ -8,7 +8,7 @@ import './Conditions.css'
 function Conditions() {
   return (
     <>
-    <div className='conditions-div my-3'>
+    <div className='conditions-div my-3 col-md-4'>
       <Date/>
       <hr />
       <TimeofDate/>
