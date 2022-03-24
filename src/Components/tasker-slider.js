@@ -46,11 +46,11 @@ function TaskerSlider() {
   ]
 
   return (
-    <div className="content mx-4 my-4">
-       <button onCLick={sliderRef?.slickPrev()}>
+    <div className="content w-75 m-auto my-4">
+       <button className='btn btn-primary m-2' onCLick={sliderRef?.slickPrev()}>
           <FaChevronLeft />
         </button>
-        <button onCLick={sliderRef?.slickNext()}>
+        <button className='btn btn-primary' onCLick={sliderRef?.slickNext()}>
           <FaChevronRight />
         </button> 
       <Slider ref={setSliderRef} {...sliderSettings}>

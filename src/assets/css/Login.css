@@ -1,6 +1,17 @@
+.form-background{
+    background-repeat: no-repeat;
+    background-position: center top ;
+    background-size: cover;
+    height: 100vh;
+    background-image: url(/src/assets/images/login-signup.jpg);
+    margin: 0;
+}
 .logo-chooser {
-    width: 200px;
+    width: 250px;
     height: 60px;
+}
+.form-Con {
+    height: 500px;
 }
 a {
     text-decoration: none;

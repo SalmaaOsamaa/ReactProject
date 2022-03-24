@@ -52,8 +52,8 @@ return (
     
     >
       { formik =>(
-        <div className='home '>
-        <div className="form-Con h-50">
+        <div className='home form-background'>
+        <div className="form-Con h-75">
   <img className='logo-chooser' src={logo} alt="logo"/>
   <form className='w-50 d-flex flex-column justify-content-evenly align-item-center' onSubmit={formik.handleSubmit}>
   <TextField label=" Name" name="name" type="text"/>
