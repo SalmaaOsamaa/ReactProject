@@ -1,0 +1,22 @@
+.account-card{
+    padding: 20px;
+}
+.acc-Con {
+    border: 2px solid rgba(0, 0, 0, 0.212);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
+.info-Con {
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 50px;
+}
+.info-Con i {
+    font-size: 25px;
+    margin-right: 20px;
+}
+.info-Con p {
+    font-size: 20px;
+    margin-top: 10px;
+}
