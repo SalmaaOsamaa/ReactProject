@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const UserSignup=()=> {
 const validate = Yup.object({
-  username: Yup.string()
+  name: Yup.string()
   .max(15 , "Must be 15 characters")
   .min(2, 'Must be 2 or more characters')
   .required('Required Field'),
@@ -32,7 +32,7 @@ return (
     <>
     <Formik 
     initialValues={{
-                username: '',
+                name: '',
                 email: '',
                 password: '',
                 confirmPassword: '',
@@ -46,7 +46,7 @@ return (
         method:"POST",
         data:values,
         withCredentials: true,
-        url: "http://localhost:4000/signup"
+        url: "http://localhost:4000/register"
       }).then((res)=>console.log(res));
     }}
     
@@ -56,7 +56,7 @@ return (
         <div className="form-Con h-50">
   <img className='logo-chooser' src={logo} alt="logo"/>
   <form className='w-50 d-flex flex-column justify-content-evenly align-item-center' onSubmit={formik.handleSubmit}>
-  <TextField label="User Name" name="username" type="text"/>
+  <TextField label=" Name" name="name" type="text"/>
   
   <TextField label="Email" name="email" type="email"/>
   <TextField label="password" name="password" type="password"/>
