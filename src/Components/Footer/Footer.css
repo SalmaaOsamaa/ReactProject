@@ -1,15 +1,16 @@
 .footer {
-    background-color: grey;
+    background-color: rgba(28, 89, 168, 0.699);
     padding-top: 30px;
-    
 }
 
 .link {
     text-decoration: none;
     color: white;
     font-size: 22px;
+    opacity: 1;
 }
- .footericons {
+.footericons {
     color:#ffff;
     font-size: 25px;
+    opacity: 1;
 } 
