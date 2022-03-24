@@ -37,7 +37,7 @@ function Login() {
     >
       {formik=>(
         <div className='home form-background'>
-        <div className="form-Con">
+        <div className="form-Con my-5">
     <img className='logo-chooser' src={logo} alt="logo"/>
       <form className='w-50 d-flex flex-column justify-content-evenly align-item-center' onSubmit={formik.handleSubmit}>
         <TextField label="Email" name="email" type="email" />

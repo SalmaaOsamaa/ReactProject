@@ -10,9 +10,9 @@ const City = () => {
       <div className='search-cont'>
         <h2 className='h1 text-center' >cities where we work-sahla</h2>
         <br />
-        <div class="searchbox">
-          <input type="search" class="xx  border border-primary form-control" placeholder="Search by zip code" />
-          <button class="btn bg-primary text-white  btn-outline-primary  " type="button" >search </button>
+        <div className="searchbox">
+          <input type="search" className="xx  border border-primary form-control" placeholder="Search by zip code" />
+          <button className="btn bg-primary text-white  btn-outline-primary  " type="button" >search </button>
         </div>
       </div>
       <div className='city' >
