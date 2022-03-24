@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import img from '../assets/images/mounting.jpg'
+import img from '../assets'
 
 function BecomeATasker() {
   return (
