@@ -6,18 +6,24 @@ import * as Yup from 'yup';
 const TaskRequest = () => {
     const [tasks, setTasks] = useState([])
     const [addresses, setAdresses] = useState([])
+    const [taskers, setTaskers] = useState([])
     // const [adressId,setAddress] = useState({})
     // const setAddressHandler = (e) => {
     //     setAddress(e.target.value)
     // }
     useEffect(()=>{
         Axios.get("http://localhost:4000/tasks").then((res)=>{
-            console.log(res);
+            
             setTasks(res.data);
         })
         Axios.get("http://localhost:4000/workAreas").then((res)=>{
-            console.log(res);
+            
             setAdresses(res.data);
+            
+        })
+        Axios.get("http://localhost:4000/taskers").then((res)=>{
+            console.log(res);
+            setTaskers(res.data.data);
             
         })
 
@@ -31,7 +37,9 @@ const TaskRequest = () => {
    initialValues={{task:'',
    description:'',
    address:'',
-   taskappointment:''
+   city:'',
+   taskappointment:'',
+   tasker:''
 }}
    onSubmit={data=>{
        console.log(data);
@@ -62,18 +70,25 @@ const TaskRequest = () => {
     )}
   
 </select>
-<select name='address' class="form-select" aria-label="Default select example" onChange={handleChange} onBlur={handleBlur} value={values.address} placeholder='Enter your zone'>
-  {addresses.map(address=>
-    <option value={address._id}>{address.city}</option>
+<select name='city' class="form-select" aria-label="Default select example" onChange={handleChange} onBlur={handleBlur} value={values.city} placeholder='Enter your city'>
+  {addresses?.find(el => el._id == values.address)?.city?.map(city=>
+    <option value={city}>{city}</option>
     )}
-  
 </select>
+
 
 
 <label for="exampleFormControlTextarea1">pick (date and time) for your task: </label>
 <input type="datetime-local" name="taskappointment" onChange={handleChange} onBlur={handleBlur} value={values.taskappointment} />
 
-<button >go to taskers</button>
+<select name='tasker' class="form-select" aria-label="Default select example" onChange={handleChange} onBlur={handleBlur} value={values.tasker} placeholder='Enter your zone'>
+  {taskers.map(tasker=>
+    <option value={tasker._id}>{tasker.name}</option>
+    )}
+  
+</select>
+
+
                
                </form>
            )
@@ -104,14 +119,7 @@ const TaskRequest = () => {
   
 </select>
 
-{
-    adressId ?<select class="form-select" aria-label="Default select example" placeholder='Enter your zone'>
-    {addresses.find(el => el._id == adressId)?.city?.map(city=>
-      <option value={city}>{city}</option>
-      )}
-    
-  </select>:null
-}
+
 
 
 
