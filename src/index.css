@@ -10,7 +10,9 @@ body {
 .text {
   color: #24a0ed;
 }
-
+label{
+  font-weight: bold;
+}
 .title{
   position: absolute;
   top: 25%;
