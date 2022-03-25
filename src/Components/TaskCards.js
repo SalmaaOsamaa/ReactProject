@@ -20,55 +20,7 @@ useEffect(()=>{
         setTasks(res.data);
     })
 }, [])
-    const cardContent = [
-        {
-            id: 1,
-            img: require('../assets/images/task1.jpg'),
-            title: 'Assemble Table / Desk',
-            price: 'Avg.price 80-100EGP'
-        },
-        {
-            id: 2,
-            img: require('../assets/images/Task2.jpg'),
-            title: 'Mount Tv or a Mirror',
-            price: 'Avg.price 60-92EGP'
-        },
-        {
-            id: 3,
-            img: require('../assets/images/Task3.jpg'),
-            title: 'Move boxes using A truck',
-            price: 'Avg.price 100-200EGP'
-        },
-        {
-            id: 4,
-            img: require('../assets/images/Task4.jpg'),
-            title: 'Clean bathroom or a Kitchen',
-            price: 'Avg.price 200-300EGP'
-        },
-        {
-            id: 5,
-            img: require('../assets/images/Task5.jpg'),
-            title: 'Plumbing a toilet',
-            price: 'Avg.price 60-100EGP'
-        },
-        {
-            id: 6,
-            img: require('../assets/images/Task6.jpg'),
-            title: 'Office / Home delivery',
-            price: 'Avg.price 40-50EGP'
-        },
-        {
-            id: 7,
-            img: require('../assets/images/Task7.jpg'),
-            title: 'Lifting Furniture',
-            price: 'Avg.price 100-200EGP'
-        }, {
-            id: 8,
-            img: require('../assets/images/Task8.jpg'),
-            title: 'Planting your garden',
-            price: 'Avg.price 100-150EGP'
-        }
-    ]
+    
     return (
         <>
        

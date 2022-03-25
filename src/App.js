@@ -21,6 +21,7 @@ import Location from './Components/City'
 import BecomeATasker from './Components/BecomeATasker'
 import UserProfile from './Components/userProfile/UserProfile'
 import SeeTaskers from './Components/seeTaskers/SeeTaskers'
+import TaskRequest from './Components/TaskRequest'
 function App() {
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
                 <TaskCards />
                 <TaskerSlider />
                 <GetStarted />
+                
               </>
             }
           ></Route>
@@ -50,6 +52,7 @@ function App() {
           <Route path="/SignUp" element={<UserSignup />}></Route>
           <Route path="/BecomeATasker" element={<BecomeATasker/>}></Route>
          <Route path="/Profile" element={<UserProfile />}></Route>
+         <Route path='/request' element={<TaskRequest/>}> </Route>
           <Route></Route>
         </Routes>
         </div>
