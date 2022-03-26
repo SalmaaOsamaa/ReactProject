@@ -7,12 +7,12 @@ function LoginOrSignUp() {
   return (
     <>
     <section className='form-background'>
-    <div className="form-Con h-50">
-      <img className='logo-chooser' src={logo} alt="logo"/>
-        <form className='w-75 d-flex flex-column justify-content-evenly align-item-center'>
+    <div className="form-chooser-Con h-50">
+        <form className='formSignUp2 d-flex flex-column justify-content-evenly align-item-center'>
+            <img className='logo-chooser m-auto' src={logo} alt="logo"/>
             <Link className='link' to="/SignUp"><button className='main-Butt'>Sign Up</button></Link>
             <Link className='link' to="/Login"><button className='sec-Butt'>Log in</button></Link>
-        <p className=' py-3 text-center'>By signing up you agree to our <a href="/">Terms of Use</a> and <a href="/">Privacy Policy</a> .</p>
+        <p className='text-center link'>Join your Website Now</p>
         </form>
     </div>
     </section>

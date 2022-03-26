@@ -41,7 +41,7 @@ export default function TaskDetails() {
   return (
     <>
       <div>
-        <div className="taskDetailsHeader bg-white px-5">
+        <div className="taskDetailsHeader bg-white px-5 mt-5">
           <div className="d-flex justify-content-start mx-5">
             <Link to="/" className="logo mx-5 my-4">
                <img src={logo} alt="Logo"></img> 

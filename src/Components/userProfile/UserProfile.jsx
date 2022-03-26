@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import img from './default_avatar.png'
 import './UserProfle.css'
 
 function UserProfile() {
   const userData = JSON.parse(localStorage.getItem("userData")) 
+  console.log(userData);
   return (
     <>
     {userData ?     <div className="container account-card w-75 m-auto my-5">
@@ -25,7 +25,7 @@ function UserProfile() {
         </div>
         <Link className='btn btn-primary' to='/myreq'>check your task requests</Link>
         <div className="info-Con d-flex">
-        {userData.tasks.length > 0 ? <> <i className="fa-solid fa-house"></i><p>{userData.tasks.map((e) => e)}</p></>: ''}
+        {userData.task && userData.task.length > 0 ? <> <i className="fa-solid fa-house"></i><p>{ userData.task.map((e) => e)}</p></>: userData.tasks && userData.tasks.length > 0 ? <> <i className="fa-solid fa-house"></i><p>{ userData.tasks.map((e) => e)}</p></> : ''}
         </div>
         </div>
     </div>

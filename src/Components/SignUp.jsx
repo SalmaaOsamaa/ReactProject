@@ -6,6 +6,7 @@ import logo from '../assets/images/logo.jpeg'
 import TextField from './TextField';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 
@@ -29,14 +30,7 @@ Zip:Yup.string()
 });
 const navigate = useNavigate();
 const [error, setError] = useState('')
-const [role, setRole] = useState('')
 
-
-const handleChange = (e) => {
-  let { value } = e.target
-  setRole(value)
-  console.log(role);
-}
 return (
     <>
     <Formik 
@@ -46,7 +40,7 @@ return (
                 password: '',
                 confirmPassword: '',
                 Zip: '',
-                role : role
+                role : ''
     }}
     validationSchema={validate}
     onSubmit={values=>{
@@ -62,7 +56,7 @@ return (
         }else {
           console.log(res);
           setError('');
-          localStorage.setItem('userData' , JSON.stringify(res.data.user))
+          localStorage.setItem('userData' , JSON.stringify(res.data.user || res.data.Tasker))
           navigate('/Profile' , {replace : true})
         }
       });
@@ -70,35 +64,34 @@ return (
     
     >
       { formik =>(
-        <div className='home form-background'>
-        <div className="form-Con h-75 my-5">
+        <div className='mt-3 form-background'>
+        <div className="form-Con">
+  <form className='d-flex flex-column justify-content-evenly align-item-center formSignUp' onSubmit={formik.handleSubmit}>
   <img className='logo-chooser' src={logo} alt="logo"/>
-  <form className='w-50 d-flex flex-column justify-content-evenly align-item-center' onSubmit={formik.handleSubmit}>
     {error ? 
    <div className="alert alert-danger alertt" role="alert">
    {error}
  </div> : ''
     }
   <TextField label=" Name" name="name" type="text"/>
-  
   <TextField label="Email" name="email" type="email"/>
   <TextField label="password" name="password" type="password"/>
   <TextField label="confirm" name="confirmPassword" type="password"/>
   <TextField label="Zip" name="Zip" type="text"/>
   <div className='my-2'>
-<label className="text-gray-500 font-bold m-2">
+  <label className="text-gray-500 font-bold m-2">
   <Field
     name="role"
-    value="tasker"
+    value="Tasker"
     className="mr-2 leading-tight m-1 form-check-input"
     type="radio"
   />
-  <span class="text-sm">Tasker</span>
+  <span className="text-sm">Tasker</span>
 </label>
 <label className="text-gray-500 font-bold m-2">
   <Field
     name="role"
-    value="customar"
+    value="Customar"
     className="mr-2 leading-tight m-1 form-check-input"
     type="radio"
   />
@@ -106,6 +99,9 @@ return (
 </label>
 </div>
     <button className='main-Butt w-100'>Create Account</button>
+    <Link to="/SignUp" className='mx-2'>
+          If You Already have an Account !
+        </Link>
   </form>
 </div>
 </div>

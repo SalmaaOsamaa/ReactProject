@@ -18,7 +18,7 @@ const GetStarted = () => {
                 <div className='col text-center mt-3'>
                     <img src={img2} width="600px"></img>
                     <p> Grow your own business while saving the day for busy neighbors.</p>
-                    <Link className='btn btn-primary' to='/BecomeATasker' >Join Sahla</Link>
+                    <Link className='btn btn-primary' to='/login' >Join Sahla</Link>
 
                 </div>
             </div>

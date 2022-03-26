@@ -6,7 +6,7 @@ const City = () => {
   return (
 
 
-    <div className='main-cont mb-5 py-5'>
+    <div className='main-cont my-5 py-5'>
       <div className='search-cont'>
         <h2 className='h1 text-center' >cities where we work-sahla</h2>
         <br />

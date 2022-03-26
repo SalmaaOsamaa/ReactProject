@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Conditions from '../Conditions/Conditions'
 import Taskers from '../Taskers/Taskers'
 
 
@@ -14,9 +13,8 @@ function SeeTaskers() {
     getData()
   }, [])
   return (
-      <div className="container">
+      <div className="container my-5">
     <div className='row justify-content-between'>
-        <Conditions/>
         <Taskers taskers={taskers}/>
     </div>
     </div>

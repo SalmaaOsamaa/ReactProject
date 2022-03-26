@@ -11,23 +11,20 @@ function Navbar() {
   return (
     <>
       <nav className="navbar navbar-dark bg-primary fixed-top justify-content-center">
-        <Link to="/" className="navbar-brand mb-0 h1">
-          <img className="w-100 rounded-3" src={logo} alt="logo" width="40" height="40" />
-        </Link>
-        <div className='d-flex'>
-          <Link to="/Locations" className="btn btn-primary">
+        <div className='d-flex justify-content-between w-100'>
+        {userData && userData.role === "customar" || !userData? <Link to="/" className="navbar-brand mb-0 h1">
+          <img className="w-75 rounded-3 mx-5" src={logo} alt="logo" width="40" height="40" />
+        </Link> : <img className="rounded-3 mx-5" src={logo} alt="logo" width="120" height="45" />}
+          {userData && userData.role === "customar" || !userData? <Link to="/Locations" className="btn btn-primary">
             Locations
-          </Link>
-          <Link to="/Services" className="btn btn-primary">
+          </Link> : ''}
+          {userData && userData.role === "customar" || !userData? <Link to="/Services" className="btn btn-primary">
             Services
-          </Link>
-          {!userData? <Link to="/LogInOrSignUp" className="btn btn-primary">
+          </Link> : '' }
+          {!userData? <Link to="/LogInOrSignUp" className="btn btn-primary mx-2">
             Login / Sign up
           </Link> : ''}
-          <Link to="/BecomeATasker" className="btn btn-primary">
-            Become a Tasker
-          </Link>
-          {userData ? <div className='userNav'>
+          {userData ? <div className='userNav mx-5'>
             <Link to="/Profile"><div className='profileNav d-flex justify-content-center align-items-center'>
           <img src={userData.image} className="userImage" alt="" />
           <p>{userData.name}</p>
