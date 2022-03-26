@@ -115,7 +115,7 @@ const TaskRequest = (props) => {
                 )}
 
               </select>
-              {taskers && taskers.img  || taskers.image ?<img className='m-3 rounded border border-primary' width={200} height={240} src={taskers.img || taskers.image}></img>:null}
+              {taskers && taskers.img  || taskers.image ? <img className='m-3 rounded border border-primary' width={200} height={240} src={taskers.img || taskers.image}></img>:null}
               {taskers?.numberOfReviews?<span>{taskers.numberOfReviews} Reviews</span>:null}
               <div><p className='d-inline mx-1 fw-bolder'>Total :</p>{total} L.E</div>
               <div id="my-radio-group"><p className='d-inline mx-1 fw-bolder'>Pick your payment method : </p></div>
