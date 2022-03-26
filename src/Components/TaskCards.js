@@ -19,8 +19,7 @@ useEffect(()=>{
         console.log(res);
         setTasks(res.data);
     })
-}, [])
-    
+}, []) 
     return (
         <>
        
