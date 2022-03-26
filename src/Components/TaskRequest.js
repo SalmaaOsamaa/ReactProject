@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Field, Formik } from 'formik';
 import PayPal from './PayPal';
+import Modal from './Modal'
 
 import * as Yup from 'yup';
 const TaskRequest = (props) => {
@@ -124,17 +125,19 @@ const TaskRequest = (props) => {
             </label>
             <label>
               <Field type="radio" name="paymentmethod" value="paypal" />
-              <PayPal/>
+              <PayPal value={total}/>
             </label>
             
             
               <button type="submit"  class="btn btn-primary">submit</button>
 
             </form>
+            
           )
         }
 
       </Formik>
+      <Modal/>
 
 
       {/* <select class="form-select" aria-label="Default select example">
