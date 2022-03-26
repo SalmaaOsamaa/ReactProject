@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import '../assets/css/GetStarted.css';
 import img1 from '../assets/images/signup.png';
-import img2 from '../assets/images/becomeatasker.png';
+import img2 from '../assets/images/become-a-tasker-img.png';
 import { Link } from 'react-router-dom';
 
 const GetStarted = () => {

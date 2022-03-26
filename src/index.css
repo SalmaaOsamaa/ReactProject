@@ -241,7 +241,10 @@ body {
   text-decoration: none;
   text-align: center;
 }
-
+.form-cont {
+  width: 50%;
+  border-radius: 10px;
+}
 @media screen and (max-width:1200px) and (min-width:992px) {
     
 }
@@ -269,6 +272,10 @@ body {
   .formLogin {
     width: 70%;
     margin: auto;
+  }
+  .form-cont {
+    width: 100% !important;
+    margin: 0px auto !important;
   }
 }
 @media screen and (max-width:768px) and (min-width:600px) {
@@ -298,6 +305,10 @@ body {
   .formLogin {
     width: 70%;
     margin: auto;
+  }
+  .form-cont {
+    width: 100% !important;
+    margin: 0px auto !important;
   }
 
 }
@@ -333,6 +344,10 @@ body {
   .formLogin {
     width: 70%;
     margin: auto;
+  }
+  .form-cont {
+    width: 100% !important;
+    margin: 0px auto !important;
   }
 }
 .alertt {
@@ -373,4 +388,16 @@ body {
 }
 @media screen and (max-width:600px) {
 
+}
+.marginTop {
+  margin-top: 100px;
+}
+.loading{ 
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spin {
+  font-size: 55px;
 }

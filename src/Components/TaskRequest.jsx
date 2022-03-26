@@ -66,8 +66,10 @@ const TaskRequest = (props) => {
       >
         {
           ({ values, handleChange, handleBlur, handleSubmit }) => (
-            <form className='my-5' onSubmit={handleSubmit}>
-              <select name='task' class="form-select m-3" aria-label="Default select example" onChange={(e) => {
+            <div className="form-background">
+            <div className="container marginTop">
+            <form className='bg-light p-3 m-auto form-cont' onSubmit={handleSubmit}>
+              <select name='task' className="form-select mt-5" aria-label="Default select example" onChange={(e) => {
                 handleChange(e)
                 taskSelectHandler(e.target.value)
               }} onBlur={handleBlur} value={values.task}>
@@ -88,7 +90,7 @@ const TaskRequest = (props) => {
                 class=' m-3'
 
               />
-              <select name='workarea' class="form-select m-3" aria-label="Default select example" onChange={handleChange} onBlur={handleBlur} value={values.workarea} placeholder='Enter your zone'>
+              <select name='workarea' class="form-select" aria-label="Default select example" onChange={handleChange} onBlur={handleBlur} value={values.workarea} placeholder='Enter your zone'>
               <option value="" disabled selected>Select your Area</option>
 
                 {workareas.map(workarea =>
@@ -96,16 +98,16 @@ const TaskRequest = (props) => {
                 )}
 
               </select>
-              <select name='city' class="form-select m-3" aria-label="Default select example" onChange={handleChange} onBlur={handleBlur} value={values.city} placeholder='Enter your city'>
+              <select name='city' class="form-select my-3" aria-label="Default select example" onChange={handleChange} onBlur={handleBlur} value={values.city} placeholder='Enter your city'>
                 {workareas?.find(el => el._id == values.workarea)?.city?.map(city =>
                   <option value={city}>{city}</option>
                 )}
               </select>
 
-              <label for="exampleFormControlTextarea1">pick (date and time) for your task: </label>
+              <label for="exampleFormControlTextarea1" className='mx-1'>Pick ( date and time ) for your task :</label>
               <input type="datetime-local" name="taskappointment" onChange={handleChange} onBlur={handleBlur} value={values.taskappointment} />
 
-              <select name='tasker' class="form-select m-3"  aria-label="Default select example" onChange={(e) => {
+              <select name='tasker' class="form-select my-3"  aria-label="Default select example" onChange={(e) => {
                 handleChange(e)
                 taskerSelectHandler(e.target.value)
               }} onBlur={handleBlur} value={values.tasker} placeholder='Enter your zone'>
@@ -116,21 +118,23 @@ const TaskRequest = (props) => {
               </select>
               {taskers?.img?<img className='m-3 rounded border border-primary' width={200} height={240} src={taskers.img}></img>:null}
               {taskers?.numberOfReviews?<span>{taskers.numberOfReviews} Reviews</span>:null}
-              <div>Total : {total} L.E</div>
-              <div id="my-radio-group">Pick your payment method</div>
+              <div><p className='d-inline mx-1 fw-bolder'>Total :</p>{total} L.E</div>
+              <div id="my-radio-group"><p className='d-inline mx-1 fw-bolder'>Pick your payment method : </p></div>
               <label>
-              <Field type="radio" name="paymentmethod" value="cash" />
+              <Field type="radio" name="paymentmethod" value="cash" className='mx-3' />
               Cash on delivery
             </label>
             <label>
-              <Field type="radio" name="paymentmethod" value="paypal" />
+              <Field type="radio" name="paymentmethod" value="paypal"/>
               <PayPal/>
             </label>
             
             
-              <button type="submit"  class="btn btn-primary">submit</button>
+              <button type="submit"  class="btn btn-primary d-block w-75 m-auto my-2">submit</button>
 
             </form>
+            </div>
+            </div>
           )
         }
 
