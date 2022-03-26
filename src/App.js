@@ -1,7 +1,6 @@
 import './App.css'
 import NavBar from './Components/Navbar'
 import Footer from './Components/Footer/Footer.jsx'
-import './Components/Conditions/Conditions.jsx'
 import React from 'react'
 import { Navigate , BrowserRouter, Route, Routes } from 'react-router-dom'
 import TaskDetails from './Components/TaskDetails'

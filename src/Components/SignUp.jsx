@@ -30,14 +30,7 @@ Zip:Yup.string()
 });
 const navigate = useNavigate();
 const [error, setError] = useState('')
-const [role, setRole] = useState('')
 
-
-const handleChange = (e) => {
-  let { value } = e.target
-  setRole(value)
-  console.log(role);
-}
 return (
     <>
     <Formik 
@@ -47,7 +40,7 @@ return (
                 password: '',
                 confirmPassword: '',
                 Zip: '',
-                role : role
+                role : ''
     }}
     validationSchema={validate}
     onSubmit={values=>{
@@ -63,7 +56,7 @@ return (
         }else {
           console.log(res);
           setError('');
-          localStorage.setItem('userData' , JSON.stringify(res.data.user))
+          localStorage.setItem('userData' , JSON.stringify(res.data.user || res.data.Tasker))
           navigate('/Profile' , {replace : true})
         }
       });
@@ -89,16 +82,16 @@ return (
   <label className="text-gray-500 font-bold m-2">
   <Field
     name="role"
-    value="tasker"
+    value="Tasker"
     className="mr-2 leading-tight m-1 form-check-input"
     type="radio"
   />
-  <span class="text-sm">Tasker</span>
+  <span className="text-sm">Tasker</span>
 </label>
 <label className="text-gray-500 font-bold m-2">
   <Field
     name="role"
-    value="customar"
+    value="Customar"
     className="mr-2 leading-tight m-1 form-check-input"
     type="radio"
   />
