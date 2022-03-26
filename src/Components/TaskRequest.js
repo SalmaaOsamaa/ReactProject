@@ -48,7 +48,8 @@ const TaskRequest = (props) => {
           city: '',
           taskappointment: '',
           tasker: '',
-          paymentmethod:''
+          paymentmethod:'',
+          customer: JSON.parse(localStorage.getItem("userData"))._id
         }}
         onSubmit={(data, { setSubmitting, resetForm }) => {
           setSubmitting(true);
