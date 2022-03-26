@@ -4,10 +4,17 @@ import Header from './Header'
 import TaskCards from './TaskCards'
 import TaskerSlider from './tasker-slider'
 
+
+
+
 function Home() {
+ 
+  
+
   return (
     <>
-           <Header />
+
+               <Header />
                 <TaskCards />
                 <TaskerSlider />
                 <GetStarted />
