@@ -7,10 +7,10 @@ function Taskers(props) {
     console.log(taskers);
 return (
     <>
-     <div className="col-md-8 px-4">
+     <div className="col-md-12 px-4 mt-3">
     {taskers ? taskers.map((tasker , indx) => <div key={indx} className="tasker row my-3">
   <div className="img-con col-md-6">
-       <img className="taskerimg rounded-circle z-depth-2" src={tasker.img} alt="tasker" /> 
+       <img className="taskerimg rounded-circle z-depth-2" src={tasker.img || tasker.image} alt="tasker" /> 
       <p><a href="/" className='link'>View Profile & Reviews</a></p>
       <button className='btn btn-primary tasker-butt'>Select & Continue</button>
       <p className='hint'>You can chat with your Tasker, adjust task details, or change task time after booking.</p>

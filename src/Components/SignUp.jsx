@@ -1,11 +1,12 @@
-import React from 'react'
-import { Formik } from 'formik';
+import React , { useState } from 'react'
+import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
 import logo from '../assets/images/logo.jpeg'
 
 import TextField from './TextField';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 
@@ -28,6 +29,7 @@ Zip:Yup.string()
 .required('Required Field'),
 });
 const navigate = useNavigate();
+const [error, setError] = useState('')
 
 return (
     <>
@@ -37,35 +39,69 @@ return (
                 email: '',
                 password: '',
                 confirmPassword: '',
-                Zip: ''
+                Zip: '',
+                role : ''
     }}
     validationSchema={validate}
     onSubmit={values=>{
       console.log(values);
-      navigate("/profile", { replace: true });
       axios({
         method:"POST",
         data:values,
         withCredentials: true,
         url: "http://localhost:4000/register"
-      }).then((res)=>console.log(res));
+      }).then((res)=>{
+        if(res.data.msg !== "User Created"){
+          setError(res.data.msg);
+        }else {
+          console.log(res);
+          setError('');
+          localStorage.setItem('userData' , JSON.stringify(res.data.user || res.data.Tasker))
+          navigate('/Profile' , {replace : true})
+        }
+      });
     }}
     
     >
       { formik =>(
-        <div className='home form-background'>
-        <div className="form-Con h-75 my-5">
+        <div className='mt-3 form-background'>
+        <div className="form-Con">
+  <form className='d-flex flex-column justify-content-evenly align-item-center formSignUp' onSubmit={formik.handleSubmit}>
   <img className='logo-chooser' src={logo} alt="logo"/>
-  <form className='w-50 d-flex flex-column justify-content-evenly align-item-center' onSubmit={formik.handleSubmit}>
+    {error ? 
+   <div className="alert alert-danger alertt" role="alert">
+   {error}
+ </div> : ''
+    }
   <TextField label=" Name" name="name" type="text"/>
-  
   <TextField label="Email" name="email" type="email"/>
   <TextField label="password" name="password" type="password"/>
   <TextField label="confirm" name="confirmPassword" type="password"/>
   <TextField label="Zip" name="Zip" type="text"/>
-   
-    <small>By clicking below and creating an account, I agree to Sahla's <a href="http://">Terms of Service</a> and <a href="/">Privacy Policy</a>.</small>
+  <div className='my-2'>
+  <label className="text-gray-500 font-bold m-2">
+  <Field
+    name="role"
+    value="Tasker"
+    className="mr-2 leading-tight m-1 form-check-input"
+    type="radio"
+  />
+  <span className="text-sm">Tasker</span>
+</label>
+<label className="text-gray-500 font-bold m-2">
+  <Field
+    name="role"
+    value="Customar"
+    className="mr-2 leading-tight m-1 form-check-input"
+    type="radio"
+  />
+  <span class="text-sm">Customar</span>
+</label>
+</div>
     <button className='main-Butt w-100'>Create Account</button>
+    <Link to="/SignUp" className='mx-2'>
+          If You Already have an Account !
+        </Link>
   </form>
 </div>
 </div>

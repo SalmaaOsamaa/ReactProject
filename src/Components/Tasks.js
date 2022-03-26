@@ -87,10 +87,10 @@ export default function Tasks(props){
         <div className={`${done ? "d-none" : ""}`}>
             <div className="row my-4">
                 <div className="col-10">
-                    <input type="text" className="form-control py-2" name="street" value={userData.street} onChange={(e)=>{changeData(e)}} placeholder="Enter street address"/>
+                    <input type="text" className="form-control py-2" name="street" value={userData.street} onChange={changeData} placeholder="Enter street address"/>
                     <div className="text-danger">{errors.streetErr}</div>
                 </div>
-                <div className="col-2"><input type="text" className="form-control py-2" name="unit" value={userData.unit} onChange={(e)=>{changeData(e)}} placeholder="Unit or Apt #"/></div>
+                <div className="col-2"><input type="text" className="form-control py-2" name="unit" value={userData.unit} onChange={changeData} placeholder="Unit or Apt #"/></div>
             </div>
             <div className="d-flex justify-content-center mt-5 mb-3"><input type="button" className="btn btn-outline-primary px-4 py-2" value="Continue" onClick={()=>{showNext()}}/></div>
         </div>
