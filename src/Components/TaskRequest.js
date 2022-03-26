@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Field, Formik } from 'formik';
+import PayPal from './PayPal';
 
 import * as Yup from 'yup';
 const TaskRequest = (props) => {
@@ -8,7 +9,6 @@ const TaskRequest = (props) => {
   const [workareas, setAdresses] = useState([])
   const [taskers, setTaskers] = useState([])
   const [total, setTotal] = useState(0)
-  const [tasker, setTasker] = useState()
   
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const TaskRequest = (props) => {
   }, [])
   const taskerSelectHandler = (taskerId) => {
     const tasker = taskers.find(t => t._id == taskerId)
-    setTasker(tasker)
+    setTaskers(taskers)
   }
   const taskSelectHandler = (taskId) => {
     const { avgPrice } = tasks.find(t => t._id == taskId)
@@ -47,7 +47,8 @@ const TaskRequest = (props) => {
           workarea: '',
           city: '',
           taskappointment: '',
-          tasker: ''
+          tasker: '',
+          paymentmethod:''
         }}
         onSubmit={(data, { setSubmitting, resetForm }) => {
           setSubmitting(true);
@@ -114,9 +115,20 @@ const TaskRequest = (props) => {
                 )}
 
               </select>
-              {tasker?.img?<img className='m-3 rounded border border-primary' width={200} height={240} src={tasker.img}></img>:null}
-              {tasker?.numberOfReviews?<span>{tasker.numberOfReviews} Reviews</span>:null}
+              {taskers?.img?<img className='m-3 rounded border border-primary' width={200} height={240} src={taskers.img}></img>:null}
+              {taskers?.numberOfReviews?<span>{taskers.numberOfReviews} Reviews</span>:null}
               <div>Total : {total} L.E</div>
+              <div id="my-radio-group">Pick your payment method</div>
+              <label>
+              <Field type="radio" name="paymentmethod" value="cash" />
+              Cash
+            </label>
+            <label>
+              <Field type="radio" name="paymentmethod" value="paypal" />
+              <PayPal/>
+            </label>
+            
+            
               <button type="submit" disabled={isSubmitting} class="btn btn-primary">submit</button>
 
             </form>

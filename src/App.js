@@ -22,6 +22,7 @@ import BecomeATasker from './Components/BecomeATasker'
 import UserProfile from './Components/userProfile/UserProfile'
 import SeeTaskers from './Components/seeTaskers/SeeTaskers'
 import TaskRequest from './Components/TaskRequest'
+import Myrequests from './Components/Myrequests'
 function App() {
   return (
     <>
@@ -53,6 +54,7 @@ function App() {
           <Route path="/BecomeATasker" element={<BecomeATasker/>}></Route>
          <Route path="/Profile" element={<UserProfile />}></Route>
          <Route path='/request' element={<TaskRequest/>}> </Route>
+         <Route path='/myreq' element={Myrequests}></Route>
           <Route></Route>
         </Routes>
         </div>
