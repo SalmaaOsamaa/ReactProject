@@ -1,9 +1,5 @@
 import './App.css'
 import NavBar from './Components/Navbar'
-import Header from './Components/Header'
-import HeaderCard from './Components/HeaderCard'
-import TaskCards from './Components/TaskCards'
-import GetStarted from './Components/GetStarted'
 import Footer from './Components/Footer/Footer.jsx'
 import './Components/Conditions/Conditions.jsx'
 import React from 'react'
@@ -43,6 +39,7 @@ function App() {
           <Route path="/SignUp" element={<UserSignup />}></Route>
           <Route path="/Profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>}></Route>
           <Route path='/request' element={<ProtectedRoute><TaskRequest/></ProtectedRoute>}> </Route>
+          <Route path='*' element={<NotFound/>}/>
           <Route></Route>
         </Routes>
         </div>
