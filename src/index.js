@@ -9,6 +9,7 @@ import GetStarted from './Components/GetStarted'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
