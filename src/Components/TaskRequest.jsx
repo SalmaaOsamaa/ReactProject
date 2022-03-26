@@ -3,7 +3,6 @@ import Axios from 'axios'
 import { Field, Formik } from 'formik';
 import PayPal from './PayPal';
 
-import * as Yup from 'yup';
 const TaskRequest = (props) => {
   const [tasks, setTasks] = useState([])
   const [workareas, setAdresses] = useState([])
@@ -73,7 +72,7 @@ const TaskRequest = (props) => {
                 handleChange(e)
                 taskSelectHandler(e.target.value)
               }} onBlur={handleBlur} value={values.task}>
-                 <option value="" disabled selected>Select your Task</option>
+                <option value="" disabled selected>Select your Task</option>
 
                 {tasks.map(task =>
                   <option value={task._id}>{task.name}</option>
@@ -116,7 +115,7 @@ const TaskRequest = (props) => {
                 )}
 
               </select>
-              {taskers?.img?<img className='m-3 rounded border border-primary' width={200} height={240} src={taskers.img}></img>:null}
+              {taskers && taskers.img  || taskers.image ?<img className='m-3 rounded border border-primary' width={200} height={240} src={taskers.img || taskers.image}></img>:null}
               {taskers?.numberOfReviews?<span>{taskers.numberOfReviews} Reviews</span>:null}
               <div><p className='d-inline mx-1 fw-bolder'>Total :</p>{total} L.E</div>
               <div id="my-radio-group"><p className='d-inline mx-1 fw-bolder'>Pick your payment method : </p></div>
