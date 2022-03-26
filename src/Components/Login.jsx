@@ -6,6 +6,7 @@ import '../assets/css/Login.css'
 import TextField from '../Components/TextField';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 function Login() {
   
@@ -47,10 +48,10 @@ const [error, setError] = useState('')
     }}
     >
       {formik=>(
-        <div className='home form-background'>
-        <div className="form-Con my-5">
-    <img className='logo-chooser' src={logo} alt="logo"/>
-      <form className='w-50 d-flex flex-column justify-content-evenly align-item-center' onSubmit={formik.handleSubmit}>
+        <div className='form-background'>
+        <div className="form-login-Con">
+      <form className='formLogin d-flex flex-column justify-content-evenly align-item-center' onSubmit={formik.handleSubmit}>
+      <img className='logo-chooser m-auto' src={logo} alt="logo"/>
       {error ? 
    <div className="alert alert-danger alertt" role="alert">
    {error}
@@ -58,9 +59,10 @@ const [error, setError] = useState('')
     }
         <TextField label="Email" name="email" type="email" />
         <TextField label="password" name="password" type="password"/>
-        <small><a href="/">Forget Password ? </a></small>
         <button className='main-Butt w-100' >Login</button>
-        <p className='py-3'>Signed up with Facebook or Google ?<a href="/"> Tap here to create a password</a>.</p>
+        <Link to="/SignUp">
+          If You Don't have an Account !
+        </Link>
       </form>
       
   </div>

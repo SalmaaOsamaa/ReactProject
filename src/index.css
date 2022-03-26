@@ -188,19 +188,52 @@ body {
   color: white;
 }
 .form-Con {
-  width: 50%;
-  background-color: white;
-  height: 30vh;
   width: 40%;
+  height: auto;
+  background-color: white;
+  box-sizing: border-box;
   z-index: 1;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
   border-radius: 5px;
-  padding: 20px 0px;
-  margin: 10rem auto;
+  padding: 20px 0px 30px 0px;
+  margin: auto;
+  margin-top: 50px;
+}
+.form-chooser-Con{
+  width: 40%;
+  height: auto;
+  background-color: white;
+  box-sizing: border-box;
+  z-index: 1;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 20px 0px 0px 0px;
+  margin: auto;
+  margin-top: 50px;
+}
+.form-login-Con{
+  width: 40%;
+  height: auto;
+  background-color: white;
+  box-sizing: border-box;
+  z-index: 1;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 20px 0px 30px 0px;
+  margin: auto;
+  margin-top: 50px;
+}
+.formSignUp {
+  width: 50%;
+  margin: auto;
+}
+.formSignUp2 {
+  width: 100%;
+  margin: auto;
+}
+.formLogin {
+  width: 65%;
+  margin: auto;
 }
 
 
@@ -209,32 +242,99 @@ body {
   text-align: center;
 }
 
-
-@media screen and (max-width:768px) and (min-width:600px) {
+@media screen and (max-width:1200px) and (min-width:992px) {
+    
+}
+@media screen and (max-width:992px) and (min-width:768px) {
   .form-Con {
-      width: 100%;
+    width: 75%;
+    margin: 0px auto;
+  }
+  .form-chooser-Con {
+    width: 75%;
+    margin: 0px auto;
+  }
+  .form-login-Con {
+    width: 75%;
+    margin: 0px auto;
+  }
+  .formSignUp {
+    width: 70%;
+    margin: auto;
+  }
+  .formSignUp2 {
+    width: 70%;
+    margin: auto;
+  }
+  .formLogin {
+    width: 70%;
+    margin: auto;
   }
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:768px) and (min-width:600px) {
   .form-Con {
-      width: 90%;
+    width: 100%;
+    margin: 0px;
+    box-shadow: none;
   }
+  .form-chooser-Con {
+    width: 100%;
+    margin: 0px;
+    box-shadow: none;
+  }
+  .form-login-Con {
+    width: 100%;
+    margin: 0px auto;
+    box-shadow: none;
+  }
+  .formSignUp {
+    width: 70%;
+    margin: auto;
+  }
+  .formSignUp2 {
+    width: 70%;
+    margin: auto;
+  }
+  .formLogin {
+    width: 70%;
+    margin: auto;
+  }
+
+}
+@media screen and (max-width:600px) {
   .main-Butt {
       width: 100%;
+  }
+  .form-Con {
+    width: 100%;
+    margin: 0px;
+    box-shadow: none;
+  }
+  .form-chooser-Con {
+    width: 100%;
+    box-shadow: none;
+  }
+  .form-login-Con {
+    width: 100%;
+    margin: 0px auto;
+    box-shadow: none;
   }
   .sec-Butt {
       width: 100%;
   }
+  .formSignUp2 {
+    width: 70%;
+    margin: auto;
+  }
+  .formSignUp2 {
+    width: 70%;
+    margin: auto;
+  }
+  .formLogin {
+    width: 70%;
+    margin: auto;
+  }
 }
-
-/* @media only screen and (max-width: 767px) {
-  .notfound .notfound-404 {
-    height: 142px;
-  }
-  .notfound .notfound-404 h1 {
-    font-size: 112px;
-  }
-} */
 .alertt {
   height: 50px !important;
   font-size: 13px !important;
@@ -261,4 +361,16 @@ body {
 } 
 .profileNav:hover {
   background-color: #205fb16b;
+}
+@media screen and (max-width:1200px) and (min-width:992px) {
+    
+}
+@media screen and (max-width:992px) and (min-width:768px) {
+    
+}
+@media screen and (max-width:768px) and (min-width:600px) {
+    
+}
+@media screen and (max-width:600px) {
+
 }
