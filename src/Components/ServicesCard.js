@@ -9,7 +9,7 @@ export default function ServicesCard(props){
         <div className="card-body">
             <h5 className="card-title text">{props.Title}</h5>
             <p className="card-text">{props.Description}</p>
-            <hr/>
+            {/* <hr/>
             <p className="card-text text">
                 <Link className="link text-primary" to={`/taskDetails/${parseInt(props.ID)}`}>{props.Service1}</Link>
             </p>
@@ -18,7 +18,7 @@ export default function ServicesCard(props){
             </p>
             <p className="card-text text">
                 <Link className="link text-primary" to={`/taskDetails/${parseInt(props.ID)}`}>{props.Service3}</Link>
-            </p>
+            </p> */}
         </div>
     </div>
     </>
