@@ -64,8 +64,8 @@ const TaskRequest = (props) => {
         }}
       >
         {
-          ({ values, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
-            <form onSubmit={handleSubmit}>
+          ({ values, handleChange, handleBlur, handleSubmit }) => (
+            <form className='my-5' onSubmit={handleSubmit}>
               <select name='task' class="form-select m-3" aria-label="Default select example" onChange={(e) => {
                 handleChange(e)
                 taskSelectHandler(e.target.value)
@@ -101,8 +101,6 @@ const TaskRequest = (props) => {
                 )}
               </select>
 
-
-
               <label for="exampleFormControlTextarea1">pick (date and time) for your task: </label>
               <input type="datetime-local" name="taskappointment" onChange={handleChange} onBlur={handleBlur} value={values.taskappointment} />
 
@@ -121,7 +119,7 @@ const TaskRequest = (props) => {
               <div id="my-radio-group">Pick your payment method</div>
               <label>
               <Field type="radio" name="paymentmethod" value="cash" />
-              Cash
+              Cash on delivery
             </label>
             <label>
               <Field type="radio" name="paymentmethod" value="paypal" />
@@ -129,7 +127,7 @@ const TaskRequest = (props) => {
             </label>
             
             
-              <button type="submit" disabled={isSubmitting} class="btn btn-primary">submit</button>
+              <button type="submit"  class="btn btn-primary">submit</button>
 
             </form>
           )

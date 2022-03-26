@@ -36,7 +36,6 @@ function App() {
           <Route path="/loginorsignup" element={<LoginOrSignUp />}></Route>
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/SignUp" element={<UserSignup />}></Route>
-          <Route path="/BecomeATasker" element={<BecomeATasker/>}></Route>
          <Route path='/myreq' element={Myrequests}></Route>
           <Route path="/Profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>}></Route>
           <Route path='/request' element={<ProtectedRoute><TaskRequest/></ProtectedRoute>}> </Route>
