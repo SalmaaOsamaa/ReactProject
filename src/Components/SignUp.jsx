@@ -71,7 +71,7 @@ return (
     
     >
       { formik =>(
-        <div className='home form-background'>
+        <div className='mt-3 form-background'>
         <div className="form-Con">
   <form className='d-flex flex-column justify-content-evenly align-item-center formSignUp' onSubmit={formik.handleSubmit}>
   <img className='logo-chooser' src={logo} alt="logo"/>

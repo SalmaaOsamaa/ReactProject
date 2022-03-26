@@ -24,13 +24,12 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        <div className='Margin'>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/Tasks" element={<ProtectedRoute><Tasks /></ProtectedRoute>}></Route>
-          <Route path="/services" element={<ProtectedRoute><Services /></ProtectedRoute>}></Route>
-          <Route path="/locations" element={<ProtectedRoute><Location /></ProtectedRoute>}></Route>
+          <Route path="/services" element={<Services />}/>
+          <Route path="/locations" element={<Location />}/>
           <Route path="/Taskers" element={<ProtectedRoute><SeeTaskers /></ProtectedRoute>}></Route>
           <Route path="/taskDetails/:id" element={<ProtectedRoute><TaskDetails /></ProtectedRoute>}></Route>
           <Route path="/taskDetails" element={<ProtectedRoute><TaskDetails /></ProtectedRoute>}></Route>
@@ -39,10 +38,8 @@ function App() {
           <Route path="/SignUp" element={<UserSignup />}></Route>
           <Route path="/Profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>}></Route>
           <Route path='/request' element={<ProtectedRoute><TaskRequest/></ProtectedRoute>}> </Route>
-          <Route path='*' element={<NotFound/>}/>
-          <Route></Route>
+        <Route path='*' element={<NotFound/>}/>
         </Routes>
-        </div>
       </BrowserRouter>
       <Footer />
     </>

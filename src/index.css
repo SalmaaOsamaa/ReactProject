@@ -197,7 +197,7 @@ body {
   border-radius: 5px;
   padding: 20px 0px 30px 0px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 .form-chooser-Con{
   width: 40%;
@@ -209,7 +209,7 @@ body {
   border-radius: 5px;
   padding: 20px 0px 0px 0px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 150px;
 }
 .form-login-Con{
   width: 40%;
@@ -221,7 +221,7 @@ body {
   border-radius: 5px;
   padding: 20px 0px 30px 0px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 150px;
 }
 .formSignUp {
   width: 50%;

@@ -13,7 +13,6 @@ function TextField({label, ...props}) {
         {...field}{...props}
         />
         <ErrorMessage name={field.name} component='div' className='error' />
-        
     </div>
     
   )
