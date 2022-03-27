@@ -12,9 +12,9 @@ import Location from './Components/City'
 import UserProfile from './Components/userProfile/UserProfile'
 import SeeTaskers from './Components/seeTaskers/SeeTaskers'
 import TaskRequest from './Components/TaskRequest'
-import Myrequests from './Components/Myrequests'
 import Home from './Components/Home'
-import Modal from './Components/Modal'
+import UserRequests from './Components/UserRequest/UserRequests'
+import MyReqssss from './Components/MyReqssss'
 function App() {
   function ProtectedRoute({ children }){
     return !localStorage.getItem("userData") ? <Navigate to="/login"/> :  children;
@@ -30,10 +30,10 @@ function App() {
           <Route path="/locations" element={<Location />}/>
           <Route path="/Taskers" element={<ProtectedRoute><SeeTaskers /></ProtectedRoute>}></Route>
           <Route path="/loginorsignup" element={<LoginOrSignUp />}></Route>
-          
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/SignUp" element={<UserSignup />}></Route>
-         <Route path='/myreq' element={Myrequests}></Route>
+          <Route path='/UserReq/:id' element={<UserRequests/>}></Route>
+          <Route path='/TaskerReqs/:id' element={<MyReqssss/>}></Route>
           <Route path="/Profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>}></Route>
           <Route path='/request' element={<ProtectedRoute><TaskRequest/></ProtectedRoute>}> </Route>
         <Route path='*' element={<NotFound/>}/>

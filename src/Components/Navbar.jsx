@@ -12,13 +12,13 @@ function Navbar() {
     <>
       <nav className="navbar navbar-dark bg-primary fixed-top justify-content-center">
         <div className='d-flex justify-content-between w-100'>
-        {userData && userData.role === "customar" || !userData? <Link to="/" className="navbar-brand mb-0 h1">
+        <Link to="/" className="navbar-brand mb-0 h1">
           <img className="w-75 rounded-3 mx-5" src={logo} alt="logo" width="40" height="40" />
-        </Link> : <img className="rounded-3 mx-5" src={logo} alt="logo" width="120" height="45" />}
-          {userData && userData.role === "customar" || !userData? <Link to="/Locations" className="btn btn-primary">
+        </Link>
+          {userData && userData.role === "Customar" || !userData? <Link to="/Locations" className="btn btn-primary">
             Locations
           </Link> : ''}
-          {userData && userData.role === "customar" || !userData? <Link to="/Services" className="btn btn-primary">
+          {userData && userData.role === "Customar" || !userData? <Link to="/Services" className="btn btn-primary">
             Services
           </Link> : '' }
           {!userData? <Link to="/LogInOrSignUp" className="btn btn-primary mx-2">

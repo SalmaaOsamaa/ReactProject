@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux';
 
 export default function PayPal({total}) {
     // const { cart } = useSelector(state => state.cart);
