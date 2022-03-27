@@ -1,29 +1,27 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-
-function UserRequests() {
-    let params = useParams();
+function MyReqssss() {
+    const params = useParams()
     const [requsets, setRequsets] = useState([])
     const [loading, setLoading] = useState(false)
     const getData = async () => {
         setLoading(true)
         await axios.get("http://localhost:4000/taskrequests").then((res) => {
             setRequsets(res.data.filter((req) => {
-              console.log(res);
-                return req.customer === params.id
+            console.log(res);
+                return req.tasker === params.id
             }));
             setLoading(false)
         })
-
     }
     useEffect(() => {
         getData();
     }, [])
   return (
     <>
-   <div className="container marginTop">
-       <div className="row my-5 g-3">
+<div className="container marginTop">
+    <div className="row my-5 g-3">
     {requsets.length > 0 ? requsets.map((requset) =>    <div class="card m-4 col-md-3">
      <div class="card-body">
        <h5 class="card-title">{requset.name}</h5>
@@ -39,5 +37,4 @@ function UserRequests() {
   )
 }
 
-export default UserRequests
-
+export default MyReqssss

@@ -23,7 +23,7 @@ function UserProfile() {
         <div className="info-Con d-flex">
         <i className="fa-solid fa-location-dot"></i><p>{userData.role}</p>
         </div>
-        <Link className='btn btn-primary mx-5' to={`/myreq/${userData._id}`}>Check Your Task Requests</Link>
+        {userData.role === 'Customar' ? <Link className='btn btn-primary mx-5' to={`/UserReq/${userData._id}`}>Check Your Task Requests</Link> : <Link className='btn btn-primary mx-5' to={`/TaskerReqs/${userData._id}`}>Check Your Task Requests</Link>}
         <div className="info-Con d-flex">
         {userData.task && userData.task.length > 0 ? <> <i className="fa-solid fa-house"></i><p>{ userData.task.map((e) => e)}</p></>: userData.tasks && userData.tasks.length > 0 ? <> <i className="fa-solid fa-house"></i><p>{ userData.tasks.map((e) => e)}</p></> : ''}
         </div>

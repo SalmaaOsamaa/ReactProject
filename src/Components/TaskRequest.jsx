@@ -12,28 +12,22 @@ const TaskRequest = (props) => {
 
   useEffect(() => {
     Axios.get("http://localhost:4000/tasks").then((res) => {
-
       setTasks(res.data);
     })
     Axios.get("http://localhost:4000/workAreas").then((res) => {
-
       setAdresses(res.data);
-
     })
     Axios.get("http://localhost:4000/taskers").then((res) => {
       setTaskers(res.data.data);
-
     })
-    
-
   }, [])
   const taskerSelectHandler = (taskerId) => {
     const tasker = taskers.find(t => t._id == taskerId)
     setTaskers(taskers)
   }
   const taskSelectHandler = (taskId) => {
-    const { avgPrice } = tasks.find(t => t._id == taskId)
-    setTotal(avgPrice)
+    const avgPrice = tasks.find(t => t._id == taskId)
+    setTotal(avgPrice);
   }
   return (
     <>
@@ -41,7 +35,9 @@ const TaskRequest = (props) => {
       <Formik
 
         initialValues={{
-          task: '',
+          name: '',
+          image: tasks.image,
+          avgPrice: tasks.avgPrice,
           description: '',
           workarea: '',
           city: '',
@@ -68,14 +64,14 @@ const TaskRequest = (props) => {
             <div className="form-background">
             <div className="container marginTop">
             <form className='bg-light p-3 m-auto form-cont' onSubmit={handleSubmit}>
-              <select name='task' className="form-select mt-5" aria-label="Default select example" onChange={(e) => {
+              <select name='name' className="form-select mt-5" aria-label="Default select example" onChange={(e) => {
                 handleChange(e)
                 taskSelectHandler(e.target.value)
               }} onBlur={handleBlur} value={values.task}>
                 <option value="" disabled selected>Select your Task</option>
 
                 {tasks.map(task =>
-                  <option value={task._id}>{task.name}</option>
+                  <option value={task.name}>{task.name}</option>
                 )
                 }
 
@@ -127,10 +123,7 @@ const TaskRequest = (props) => {
               <Field type="radio" name="paymentmethod" value="paypal"/>
               <PayPal/>
             </label>
-            
-            
               <button type="submit"  class="btn btn-primary d-block w-75 m-auto my-2">submit</button>
-
             </form>
             </div>
             </div>
