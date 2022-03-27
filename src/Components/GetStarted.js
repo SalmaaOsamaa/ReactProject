@@ -15,12 +15,7 @@ const GetStarted = () => {
                     <p className='font-weight-bold'>Hear that? The sweet sigh of relief. Start getting more done.</p>
                     <Link className='btn btn-primary' to='/loginorsignup' >Sign up now</Link>
                 </div>
-                <div className='col text-center mt-3'>
-                    <img src={img2} width="600px"></img>
-                    <p> Grow your own business while saving the day for busy neighbors.</p>
-                    <Link className='btn btn-primary' to='/login' >Join Sahla</Link>
-
-                </div>
+                
             </div>
         </div>
     )

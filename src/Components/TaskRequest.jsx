@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Field, Formik } from 'formik';
 import PayPal from './PayPal';
+import Modal from './Modal'
 
 const TaskRequest = (props) => {
   const [tasks, setTasks] = useState([])
   const [workareas, setAdresses] = useState([])
   const [taskers, setTaskers] = useState([])
   const [total, setTotal] = useState(0)
-  
+  const [openModal, setOpenModal] = useState(false);
+  const modalHandler = () => {
+    setOpenModal(false)
+  }
 
   useEffect(() => {
     Axios.get("http://localhost:4000/tasks").then((res) => {
@@ -56,7 +60,9 @@ const TaskRequest = (props) => {
             data:data,
             withCredentials: true,
             url: "http://localhost:4000/createTaskrequests"
-          }).then((res)=>console.log(res));
+          }).then((res)=>{
+            setOpenModal(true)
+          });
         }}
       >
         {
@@ -127,10 +133,13 @@ const TaskRequest = (props) => {
             </form>
             </div>
             </div>
+
+            
           )
         }
 
       </Formik>
+      {openModal? <Modal closeModal={modalHandler}/>:null}
 
 
       {/* <select class="form-select" aria-label="Default select example">

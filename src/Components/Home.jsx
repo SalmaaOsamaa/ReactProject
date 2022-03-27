@@ -2,14 +2,22 @@ import React from 'react'
 import GetStarted from './GetStarted'
 import Header from './Header'
 import TaskCards from './TaskCards'
-import TaskerSlider from './tasker-slider'
+import CheckTaskers from './CheckTaskers'
+
+
+
+
 
 function Home() {
+ 
+  
+
   return (
     <>
-           <Header />
-                <TaskCards />
-                <TaskerSlider />
+              
+               <Header />
+              <TaskCards />
+              <CheckTaskers/>
                 <GetStarted />
     </>
   )

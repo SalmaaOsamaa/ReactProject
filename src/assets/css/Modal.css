@@ -1,0 +1,19 @@
+.modalBackground{
+    border: 2px solid rgba(0, 0, 0, 0.363);
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    z-index: 2;
+    background-color: beige;
+    animation: salma 0.5s linear;
+}
+@keyframes salma {
+    0%{top: 15%;}
+    50%{top: 17%;}
+    75%{top: 19%;}
+    100%{top: 21%;}
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-export default function PayPal() {
+export default function PayPal({total}) {
     // const { cart } = useSelector(state => state.cart);
     const paypal = useRef();
     useEffect(() => {
@@ -20,7 +20,7 @@ export default function PayPal() {
                                     //         currentCartItem.productPrice,
                                     //     0
                                     // ).toFixed(2)
-                                    value:50
+                                    value:total
                                     //JSON.parse(window.localStorage.getItem('cart'))
                                 },
                             },
