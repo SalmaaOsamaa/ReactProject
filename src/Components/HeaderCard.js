@@ -83,7 +83,7 @@ const HeaderCard = () => {
             <div className="col-3">
               <Link
                 to={{
-                  pathname: '/taskDetails',
+                  pathname: '/request',
                 }}
                 className="btn btn-primary "
               >
@@ -107,7 +107,7 @@ const HeaderCard = () => {
                   ) : (
                     <Link
                       key={c.id}
-                      to={`taskDetails/${c.id}`}
+                      to='/request'
                       className="btn btn-primary m-1"
                     >
                       {c.title}

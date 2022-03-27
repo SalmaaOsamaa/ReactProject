@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux';
 
-export default function PayPal(props) {
+export default function PayPal({total}) {
     // const { cart } = useSelector(state => state.cart);
     const paypal = useRef();
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function PayPal(props) {
                                     //         currentCartItem.productPrice,
                                     //     0
                                     // ).toFixed(2)
-                                    value:props.total
+                                    value:total
                                     //JSON.parse(window.localStorage.getItem('cart'))
                                 },
                             },

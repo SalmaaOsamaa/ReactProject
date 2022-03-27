@@ -10,7 +10,10 @@ const TaskRequest = (props) => {
   const [workareas, setAdresses] = useState([])
   const [taskers, setTaskers] = useState([])
   const [total, setTotal] = useState(0)
-  
+  const [openModal, setOpenModal] = useState(false);
+  const modalHandler = () => {
+    setOpenModal(false)
+  }
 
   useEffect(() => {
     Axios.get("http://localhost:4000/tasks").then((res) => {
@@ -62,7 +65,9 @@ const TaskRequest = (props) => {
             data:data,
             withCredentials: true,
             url: "http://localhost:4000/createTaskrequests"
-          }).then((res)=>console.log(res));
+          }).then((res)=>{
+            setOpenModal(true)
+          });
         }}
       >
         {
@@ -125,11 +130,11 @@ const TaskRequest = (props) => {
             </label>
             <label>
               <Field type="radio" name="paymentmethod" value="paypal" />
-              <PayPal value={total}/>
+              {total>0 ? <PayPal total={total}/>:null}
             </label>
             
             
-              <button type="submit"  class="btn btn-primary">submit</button>
+              <button type="submit" class="btn btn-primary">submit</button>
 
             </form>
             
@@ -137,7 +142,7 @@ const TaskRequest = (props) => {
         }
 
       </Formik>
-      <Modal/>
+      {openModal? <Modal closeModal={modalHandler}/>:null}
 
 
       {/* <select class="form-select" aria-label="Default select example">

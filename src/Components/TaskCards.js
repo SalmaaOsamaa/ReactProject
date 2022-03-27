@@ -41,7 +41,7 @@ useEffect(()=>{
 
                                         <p><FontAwesomeIcon icon={faMoneyBill1Wave} /> avgPrice {el.avgPrice}</p>
                                     </Card.Text>
-                                    <Link to={ `taskDetails/${el.id}`} variant="primary">Check availability</Link >
+                                    <Link to='/request' variant="primary">Check availability</Link >
 
                                 </Card.Body>
                             </Card>
