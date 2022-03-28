@@ -15,6 +15,7 @@ const TaskRequest = (props) => {
   }
 
   useEffect(() => {
+    let isMounted = true
     Axios.get("http://localhost:4000/tasks").then((res) => {
       setTasks(res.data);
     })
