@@ -143,35 +143,6 @@ const TaskRequest = (props) => {
       {openModal? <Modal closeModal={modalHandler}/>:null}
 
 
-      {/* <select class="form-select" aria-label="Default select example">
-      {tasks.map(task=>
-        <option value={task._id}>{task.name}</option>
-
-      
-      )
-
-      }
-  
-</select>
-<div className="form-group">
-    <label for="exampleFormControlTextarea1">Description of your task requirments</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-
-  <select class="form-select" aria-label="Default select example" onChange={setAddressHandler} placeholder='Enter your zone'>
-  {addresses.map(address=>
-    <option value={address._id}>{address.name}</option>
-    )}
-  
-</select>
-
-
-
-
-
-<label for="birthdaytime">pick (date and time):</label>
-<input type="datetime-local" id="birthdaytime" name="birthdaytime"/> */}
-
 
     </>
 
