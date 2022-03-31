@@ -23,6 +23,9 @@ label{
   font-size: 80px;
   color: #196ca0;
 }
+.header {
+  position: relative;
+}
 .link {
   text-decoration: none;
 }
@@ -401,4 +404,18 @@ body {
 }
 .spin {
   font-size: 55px;
+}
+.image-req {
+  width: 40%;
+  border-radius: 50%;
+}
+.star2 {
+  font-size: 13px;
+  color: rgb(253, 253, 29);
+}
+.review-req{
+  font-size: 13px;
+}
+.mail {
+  font-size: 12px;
 }

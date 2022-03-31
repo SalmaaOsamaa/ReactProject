@@ -4,8 +4,7 @@ export default function PayPal({total}) {
     // const { cart } = useSelector(state => state.cart);
     const paypal = useRef();
     useEffect(() => {
-        window.paypal
-            .Buttons({
+        window.paypal.Buttons({
                 createOrder: (data, actions, err) => {
                     return actions.order.create({
                         intent: "CAPTURE",

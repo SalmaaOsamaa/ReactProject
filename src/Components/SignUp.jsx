@@ -51,7 +51,7 @@ return (
         withCredentials: true,
         url: "http://localhost:4000/register"
       }).then((res)=>{
-        if(res.data.msg !== "User Created"){
+        if(res.data.msg !== "User Created" && res.data.msg !== "Tasker Created"){
           setError(res.data.msg);
         }else {
           console.log(res);
