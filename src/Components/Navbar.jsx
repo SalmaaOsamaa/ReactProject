@@ -26,7 +26,7 @@ function Navbar() {
           </Link> : ''}
           {userData ? <div className='userNav mx-5'>
             <Link to="/Profile"><div className='profileNav d-flex justify-content-center align-items-center'>
-          <img src={userData.image} className="userImage" alt="" />
+          <img src={userData.image || userData.img} className="userImage" alt="" />
           <p>{userData.name}</p>
           </div></Link>
           <button onClick={removeUser} className='btn btn-warning'>Log Out</button>

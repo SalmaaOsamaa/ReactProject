@@ -14,13 +14,15 @@ import SeeTaskers from './Components/seeTaskers/SeeTaskers'
 import TaskRequest from './Components/TaskRequest'
 import Home from './Components/Home'
 import UserRequests from './Components/UserRequest/UserRequests'
-import MyReqssss from './Components/MyReqssss'
+import MyReqssss, { RequestsCount } from './Components/MyReqssss'
+import { TasksRequestsContext } from './TasksRequestsContext'
 function App() {
   function ProtectedRoute({ children }){
     return !localStorage.getItem("userData") ? <Navigate to="/login"/> :  children;
   }
   return (
     <>
+        <TasksRequestsContext>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -38,8 +40,10 @@ function App() {
           <Route path='/request' element={<ProtectedRoute><TaskRequest/></ProtectedRoute>}> </Route>
         <Route path='*' element={<NotFound/>}/>
         </Routes>
+        
       </BrowserRouter>
       <Footer />
+      </TasksRequestsContext>
     </>
   )
 }

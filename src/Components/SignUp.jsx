@@ -12,38 +12,8 @@ import { Link } from 'react-router-dom';
 
 const UserSignup = () => {
 
- 
-    const validate = Yup.object({
-      name: Yup.string()
-        .max(15, "Must be 15 characters")
-        .min(2, 'Must be 2 or more characters')
-        .required('Required Field'),
-      email: Yup.string()
-        .email('email is invalid')
-        .required('Email is required'),
-      password: Yup.string()
-        .min(6, 'Password must be atleast 6 charcaters')
-        .required('Password is required'),
-      confirmPassword: Yup.string()
-        .oneOf([Yup.ref('password'), null], 'password is not matching')
-        .required('confirming your password is required'),
-      Zip: Yup.string()
-        .required('Required Field'),
-    });
-    const navigate = useNavigate();
-    const [error, setError] = useState('')
-    const [tasks, setTasks] = useState([])
-    const [chosenRole, setChosenRole] = useState('')
-    const changeHandler = (e) => {
-      setChosenRole(e.target.value)
-    }
-   useEffect(()=>{
-     axios.get("http://localhost:4000/tasks").then((res)=>{
 
-       setTasks(res.data);
-     })
-   })
-    
+   
     return (
       <>
         <Formik

@@ -15,13 +15,15 @@ export default function Services() {
   return (
     <>
       <div>
+        <div className="header">
         <h1 className="text-center mt-5 title">What do you need help with?</h1>
         <img
           src={headerImg}
           alt=" "
-          style={{ width: '100%', height: '75vh'  }}
+          style={{ width: '100%', height: '100vh'  }}
         />
-        <h2 className="text-center mt-4 mb-3">
+        </div>
+        <h2 className="my-4">
           Let Taskers help tackle your to-do list!
         </h2>
         <div className="container">
