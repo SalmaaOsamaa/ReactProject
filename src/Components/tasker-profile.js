@@ -21,11 +21,7 @@ function TaskerProfile(props) {
               <h3>John B.</h3>
               <h4>$50/hr</h4>
             </div>
-            <div className="col-md-4">
-              <button type="button" className="btn btn-primary m-4" >
-                Select & Continue
-              </button>
-            </div>
+           
           </div>
           <div className="row pt-4 gx-4" padding={20}>
             <h4>Skills and Experience</h4>

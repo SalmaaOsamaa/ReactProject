@@ -1,20 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { TasksRequests } from '../../TasksRequestsContext';
+import TaskRequest from '../TaskRequest';
+
+
 
 function UserRequests() {
+  
+
   let { TasksRequest , loading , Taskers } = useContext(TasksRequests);
 
     let params = useParams();
-    const [MyRequsets, setRequsets] = useState([])
+    const [MyRequests, setRequests] = useState([])
     const [TaskerReq, setTaskerReq] = useState('')
     const FilterMyRequests = () => {
-      let MyNewRequests = TasksRequest.filter((request) => request.customer === params.id)
-      setRequsets(MyNewRequests)
+      setRequests(TasksRequest.filter((request) => request.customer === params.id))
     }
     const FilterReqTasker = (request) => {
       const newTasker = Taskers.data.filter((tasker) => tasker._id === request.tasker)
-      console.log(newTasker);
       setTaskerReq([...newTasker])
     }
     const removeTaskerDetails = () => {
@@ -24,18 +27,24 @@ function UserRequests() {
       FilterMyRequests();
     }, [TasksRequest])
 
+    
+
   return (
     <>
   <div className="container marginTop">
       <div className="row my-5 g-3">
-    {MyRequsets.length > 0 ? MyRequsets.map((request , indx) =>    <div key={indx} className="card m-4 col-md-3">
+    {MyRequests.length > 0 ? MyRequests.map((request , indx) =>    <div key={indx} className="card m-4 col-md-3">
     <div className="card-body">
       <h5 className="card-title">{request.name}</h5>
-      {request.avgPrice ? <p>Average Price : {request.avgPrice}$</p> : ''}
+      <p className="card-text">Description : {request.description}</p>
+      <p>Total: {request.avgPrice}</p>
       <p className="card-text">Payment Method : {request.paymentmethod}</p>
       <p className="card-text">Task Appointment : {request.taskappointment}</p>
-      <p className="card-text">Task Status : {request.status}</p>
-      <p className="card-text">Description : {request.description}</p>
+       <p className="card-text">Task Status : {request.status} </p>
+      {request.status==="approved"? <>
+      <p className='progresspara'>in progress Tasker is on the way</p>
+      </>:''}
+      
       <button className='btn btn-primary' onClick={() => FilterReqTasker(request)}>See Tasker</button>
       {TaskerReq ? <button className='btn btn-primary mx-3' onClick={removeTaskerDetails}><i class="fa-solid fa-angle-up"></i></button> : ''}
       <div className='w-100 my-4 d-flex'>

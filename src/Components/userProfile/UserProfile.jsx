@@ -28,7 +28,7 @@ function UserProfile() {
         <div className="info-Con d-flex">
         <i className="fa-solid fa-location-dot"></i><p>{userData.role}</p>
         </div>
-        {userData.role === 'Customar' ? <Link className='btn btn-primary mx-5 position-relative' to={`/UserReq/${userData._id}`}>Check Your Task Requests
+        {userData.role === 'Customer' ? <Link className='btn btn-primary mx-5 position-relative' to={`/UserReq/${userData._id}`}>Check Your Task Requests
         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
         {RequestsUserCount.length}
     <span className="visually-hidden">unread messages</span>

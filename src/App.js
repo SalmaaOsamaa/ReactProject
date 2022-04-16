@@ -34,10 +34,10 @@ function App() {
           <Route path="/loginorsignup" element={<LoginOrSignUp />}></Route>
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/SignUp" element={<UserSignup />}></Route>
-          <Route path='/UserReq/:id' element={<UserRequests/>}></Route>
-          <Route path='/TaskerReqs/:id' element={<MyReqssss/>}></Route>
+          <Route path='/UserReq/:id' element={<ProtectedRoute><UserRequests /></ProtectedRoute>}></Route>
+          <Route path='/TaskerReqs/:id' element={<ProtectedRoute><MyReqssss /></ProtectedRoute>}></Route>
           <Route path="/Profile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>}></Route>
-          <Route path='/request' element={<ProtectedRoute><TaskRequest/></ProtectedRoute>}> </Route>
+          <Route path='/request/:id' element={<ProtectedRoute><TaskRequest/></ProtectedRoute>}> </Route>
         <Route path='*' element={<NotFound/>}/>
         </Routes>
         

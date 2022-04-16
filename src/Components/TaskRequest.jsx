@@ -3,6 +3,7 @@ import Axios from 'axios'
 import { Field, Formik } from 'formik';
 import PayPal from './PayPal';
 import Modal from './Modal'
+import { useParams } from 'react-router';
 
 const TaskRequest = (props) => {
   const [tasks, setTasks] = useState([])
@@ -14,6 +15,8 @@ const TaskRequest = (props) => {
   const modalHandler = () => {
     setOpenModal(false)
   }
+  let params = useParams();
+
 
   useEffect(() => {
     Axios.get("http://localhost:4000/tasks").then((res) => {
@@ -33,10 +36,10 @@ const TaskRequest = (props) => {
     setTaskerChosen(tasker);
   }
   const taskSelectHandler = (taskId) => {
-    console.log(taskId);
-    // const task = tasks.find(t => t._id === taskId)
-    // console.log(task);
-    // setTotal(avgPrice);
+    console.log(taskId)
+     const task = tasks.find(t => t._id === taskId)
+     console.log(task)
+     setTotal(task.avgPrice);
   }
   return (
     <>
@@ -47,6 +50,7 @@ const TaskRequest = (props) => {
           image: tasks.image,
           avgPrice: tasks.avgPrice,
           description: '',
+          task:'',
           workarea: '',
           city: '',
           taskappointment: '',
@@ -74,13 +78,14 @@ const TaskRequest = (props) => {
             <div className="form-background">
             <div className="container marginTop">
             <form className='bg-light p-3 m-auto form-cont' onSubmit={handleSubmit}>
-              <select  name='name' className="form-select mt-5" aria-label="Default select example" onChange={(e) => {
+              <select  name='task' className="form-select mt-5" aria-label="Default select example" onChange={(e) => {
                 handleChange(e)
                 taskSelectHandler(e.target.value)
               }} onBlur={handleBlur} value={values.task}>
+                                  <option value=''>Choose Task</option>
 
-                {tasks.map((task , indx) =>
-                  <option key={indx} value={task}>{task.name}</option>
+                {tasks.filter(t => t._id == params.id).map((task) =>
+                  <option value={task._id}>{task.name}</option>
                 )
                 }
 
@@ -94,7 +99,7 @@ const TaskRequest = (props) => {
                 className=' m-3'
               />
               <select name='workarea' className="form-select" aria-label="Default select example" onChange={handleChange} onBlur={handleBlur} value={values.workarea} placeholder='Enter your zone'>
-
+                <option>choose your area</option>
                 {workareas.map((workarea , indx) =>
                   <option key={indx} value={workarea._id}>{workarea.name}</option>
                 )}
@@ -109,12 +114,18 @@ const TaskRequest = (props) => {
               <label htmlFor="exampleFormControlTextarea1" className='mx-1'>Pick ( date and time ) for your task :</label>
               <input type="datetime-local" name="taskappointment" onChange={handleChange} onBlur={handleBlur} value={values.taskappointment} />
 
-              <select name='tasker' className="form-select my-3"  aria-label="Default select example" onChange={(e) => {
+              <select name='tasker' className="form-select my-3"  aria-label="Default select example"  onChange={(e) => {
                 handleChange(e)
                 taskerSelectHandler(e.target.value)
               }} onBlur={handleBlur} value={values.tasker} placeholder='Enter your zone'>
-                {taskers.map((tasker , indx) =>
-                  <option key={indx} value={tasker._id}>Name: {tasker.name}, Skills: {tasker.Skills.join(', ')}</option>
+                                <option>choose a Tasker</option>
+
+                {taskers.filter(tasker=> {
+                  return tasker.task._id === values.task
+                })
+                .map((tasker , indx) =>
+                  <option  key={indx} value={tasker._id} disabled={!tasker.isAvailable}>Name: {tasker.name} Task: {tasker.task.name} Availability: {tasker.isAvailable.toString()} </option>
+                  
                 )}
 
               </select>
@@ -124,7 +135,7 @@ const TaskRequest = (props) => {
               {taskerChosen && taskerChosen.name ?<><h3>{taskerChosen.name}</h3></>:null}
               {taskerChosen && taskerChosen.numberOfReviews ?<><i className="fa-solid fa-star star mx-2"></i><span>{taskerChosen.numberOfReviews} Reviews</span></>:null}
               {taskerChosen && taskerChosen.PricePerHour ?<><h6 className='m-2'>Price Per Hour : {taskerChosen.PricePerHour} $/hr</h6></>:null}
-              {taskerChosen && taskerChosen.Skills.length > 0 ?<><h6 className='m-2'>Skills : {taskerChosen.Skills.map((ele) => ` ${ele} `)}</h6></>:null}
+              {/* {taskerChosen && taskerChosen.Skills.length > 0 ?<><h6 className='m-2'>Skills : {taskerChosen.Skills.map((ele) => ` ${ele} `)}</h6></>:null} */}
               {taskerChosen && taskerChosen.About ?<><h6 className='m-2'>{taskerChosen.About}</h6></>:null}
               </div>
               </div>
@@ -134,9 +145,7 @@ const TaskRequest = (props) => {
               <Field type="radio" name="paymentmethod" value="cash" className='mx-3' />
               Cash on delivery
             </label>
-            <label>
-              <Field type="radio" name="paymentmethod" value="paypal"/>
-            </label>
+            
               <button type="submit"  className="btn btn-primary d-block w-75 m-auto my-2">submit</button>
             </form>
             </div>
@@ -150,7 +159,34 @@ const TaskRequest = (props) => {
       {openModal? <Modal closeModal={modalHandler}/>:null}
 
 
+      {/* <select className="form-select" aria-label="Default select example">
+      {tasks.map(task=>
+        <option value={task._id}>{task.name}</option>
+
       
+      )
+
+        }
+  
+</select>
+<div className="form-group">
+    <label for="exampleFormControlTextarea1">Description of your task requirments</label>
+    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <select className="form-select" aria-label="Default select example" onChange={setAddressHandler} placeholder='Enter your zone'>
+  {addresses.map(address=>
+    <option value={address._id}>{address.name}</option>
+    )}
+  
+</select>
+
+
+
+
+
+<label for="birthdaytime">pick (date and time):</label>
+<input type="datetime-local" id="birthdaytime" name="birthdaytime"/> */}
 
 
     </>

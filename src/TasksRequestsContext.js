@@ -38,7 +38,7 @@ export function TasksRequestsContext(props){
                         })}
                         const countTasks = () => {
                             let userData = JSON.parse(localStorage.getItem("userData"));
-                            if(userData.role === "Customar"){
+                            if(userData.role === "Customer"){
                                 const newUserTasks = TasksRequest.filter((req) => req.customer === userData._id)
                                 setRequestsUserCount(newUserTasks);
                                 console.log(RequestsUserCount);

@@ -14,7 +14,7 @@ function Login() {
   email: Yup.string()
   .email('email is invalid')
   .required('Email is required'),
-  password: Yup.string()
+  password: Yup.string()  
   .required('Password is required')
 })
 const navigate = useNavigate();
@@ -40,7 +40,7 @@ const [error, setError] = useState('')
         if(!res.data.msg){
           console.log(res);
           setError('');
-          localStorage.setItem('userData' , JSON.stringify(res.data.user || res.data.tasker))
+          localStorage.setItem('userData' , JSON.stringify(res.data))
           navigate('/Profile' , {replace : true})
         }else {
           console.log(res , values);
@@ -59,7 +59,7 @@ const [error, setError] = useState('')
    {error}
  </div> : ''
     }
-      <div className='my-2'>
+      {/* <div className='my-2'>
   <label className="text-gray-500 font-bold m-2">
   <Field
     name="role"
@@ -72,13 +72,13 @@ const [error, setError] = useState('')
 <label className="text-gray-500 font-bold m-2">
   <Field
     name="role"
-    value="Customar"
+    value="Customer"
     className="mr-2 leading-tight m-1 form-check-input"
     type="radio"
   />
-  <span className="text-sm">Customar</span>
+  <span className="text-sm">Customer</span>
 </label>
-</div>
+</div> */}
         <TextField label="Email" name="email" type="email" />
         <TextField label="Password" name="password" type="password"/>
         <br />

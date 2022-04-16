@@ -15,7 +15,7 @@ function SeeTaskers() {
   return (
       <div className="container my-5">
     <div className='row justify-content-between'>
-        <Taskers taskers={taskers}/>
+        {taskers.length?<Taskers taskers={taskers}/>:null}
     </div>
     </div>
   )
